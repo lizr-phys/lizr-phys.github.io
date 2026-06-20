@@ -1,0 +1,17 @@
+backup_old_site/
+
+.env
+.env.*
+
+.DS_Store
+Thumbs.db
+
+node_modules/
+.next/
+coverage/
+dist/
+build/
+out/
+
+*.log
+*.tsbuildinfo
