@@ -24,8 +24,8 @@ body {
 .page {
   width: 100%;
   max-width: 820px;
-  margin: 0 auto;
-  padding: 56px 32px 72px;
+  margin: 0;
+  padding: 56px 32px 72px 56px;
 }
 
 .site-heading {
