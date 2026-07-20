@@ -19,7 +19,7 @@ lizr-phys.github.io/
 `-- README.md
 ```
 
-`assets/resume.pdf` is not included yet. Add the real CV PDF at that path when it is ready.
+The CV PDF is stored at `assets/resume.pdf`.
 
 ## Update Personal Information
 
