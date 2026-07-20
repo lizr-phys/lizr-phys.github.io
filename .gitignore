@@ -15,3 +15,6 @@ out/
 
 *.log
 *.tsbuildinfo
+
+/*.pdf
+!/assets/resume.pdf
