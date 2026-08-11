@@ -17,6 +17,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
+  scrollbar-gutter: stable;
   background: #ffffff;
   color: #000000;
   font-size: 16px;
@@ -290,20 +291,25 @@ ul {
 
 .qdu-logo {
   width: 76px;
+  position: relative;
+  left: 9px;
 }
 
 .tal-logo-frame {
-  width: 56px;
+  width: 78px;
   overflow: hidden;
-  justify-self: center;
+  justify-self: stretch;
   justify-items: start;
 }
 
 .tal-logo {
+  position: relative;
+  left: 15px;
   width: auto;
   height: 60px;
   max-width: none;
   max-height: none;
+  clip-path: inset(0 calc(100% - 54px) 0 0);
 }
 
 .entry-content p + p {
@@ -435,11 +441,13 @@ ul {
   }
 
   .tal-logo-frame {
-    width: 46px;
+    width: 62px;
   }
 
   .tal-logo {
+    left: 10px;
     height: 50px;
+    clip-path: inset(0 calc(100% - 46px) 0 0);
   }
 }
 
