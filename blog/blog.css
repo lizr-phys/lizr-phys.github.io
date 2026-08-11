@@ -1,0 +1,88 @@
+.blog-page,
+.article-page {
+  max-width: 820px;
+}
+
+.blog-introduction {
+  max-width: 38rem;
+}
+
+.post-list {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-list > li {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid #000000;
+}
+
+.post-list time {
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.post-list article,
+.post-list h3,
+.post-list p {
+  margin: 0;
+}
+
+.post-list h3 {
+  font-size: 1.05rem;
+}
+
+.post-list p {
+  margin-top: 0.35rem;
+}
+
+.article-heading .article-context {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.article-heading h1 {
+  margin-bottom: 0.45rem;
+}
+
+.post-content {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #000000;
+}
+
+.post-content p {
+  max-width: 42rem;
+  margin-bottom: 1rem;
+}
+
+.blog-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #000000;
+}
+
+.blog-footer p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .post-list > li {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
+
+@media print {
+  .blog-footer {
+    display: none;
+  }
+
+  .post-list > li {
+    break-inside: avoid;
+  }
+}

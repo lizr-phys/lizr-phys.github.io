@@ -14,6 +14,11 @@ https://lizr-phys.github.io
 lizr-phys.github.io/
 |-- index.html
 |-- style.css
+|-- blog/
+|   |-- index.html
+|   |-- blog.css
+|   `-- about-this-blog/
+|       `-- index.html
 |-- assets/
 |   `-- resume.pdf
 `-- README.md
@@ -39,7 +44,9 @@ The "Download CV" link in `index.html` already points to that file.
 
 ## Update Links
 
-Edit the "More" section in `index.html` to update GitHub, Bilibili, or other links.
+Edit the "More" section in `index.html` to update GitHub, Blog, Bilibili, or other links.
+
+The blog is part of the same GitHub Pages site at `/blog/`. Edit `blog/index.html` to update the post list and add each article in its own folder under `blog/`.
 
 External links should use:
 
