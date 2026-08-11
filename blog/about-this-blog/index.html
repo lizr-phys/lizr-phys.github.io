@@ -6,33 +6,80 @@
   <meta name="description" content="An introduction to Zhuoran Li's academic blog.">
   <title>About This Blog | Zhuoran Li</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../../style.css?v=20260811-site-links">
-  <link rel="stylesheet" href="../blog.css?v=20260811-site-links">
+  <link rel="stylesheet" href="../../style.css?v=20260811-color-sidebar">
+  <link rel="stylesheet" href="../blog.css?v=20260811-color-sidebar">
 </head>
-<body>
-  <main class="page article-page">
-    <header class="site-heading article-heading" aria-labelledby="page-title">
-      <p class="article-context"><a href="../">Blog</a></p>
-      <h1 id="page-title">About This Blog</h1>
-      <p><a href="../../">Zhuoran Li</a><br><time datetime="2026-08-11">August 11, 2026</time></p>
-    </header>
+<body id="top">
+  <header class="topbar">
+    <nav class="section-nav blog-nav" aria-label="Blog navigation">
+      <a class="nav-name" href="../../" aria-label="Zhuoran Li homepage">Zhuoran Li</a>
+      <div class="nav-links">
+        <a href="../../">Home</a>
+        <a href="../" aria-current="page">Blog</a>
+      </div>
+    </nav>
+  </header>
 
-    <article class="post-content">
-      <p>
-        This blog will collect short notes on physics, mathematics, computation, and education.
-        It is intended as a place to organize ideas developed through coursework, reading,
-        and early research practice.
-      </p>
-      <p>
-        The emphasis will be on clear questions, careful reasoning, and concise exposition.
-        Future entries may include reading notes, derivations, computational experiments,
-        and reflections on physics education.
-      </p>
-    </article>
+  <main class="site-shell blog-shell">
+    <aside class="profile-column" aria-label="Profile and contact information">
+      <div class="profile-sticky">
+        <img
+          class="profile-image"
+          src="../../assets/avatar.jpg"
+          alt="Illustrated portrait of Zhuoran Li working at a laptop"
+          width="1024"
+          height="1024"
+        >
 
-    <footer class="blog-footer">
-      <p><a href="../">Back to all notes</a></p>
-    </footer>
+        <div class="profile-heading">
+          <h1><a href="../../">Zhuoran Li</a></h1>
+          <p>Undergraduate Student in Physics</p>
+          <p>Qingdao University</p>
+        </div>
+
+        <dl class="profile-links">
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:lizr_phys@163.com">lizr_phys@163.com</a></dd>
+          </div>
+          <div>
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/lizr-phys" target="_blank" rel="noopener noreferrer">lizr-phys</a></dd>
+          </div>
+          <div>
+            <dt>Blog</dt>
+            <dd><a href="../" aria-current="page">Visit the blog</a></dd>
+          </div>
+          <div>
+            <dt>CV</dt>
+            <dd><a href="../../assets/resume.pdf">Download CV</a></dd>
+          </div>
+        </dl>
+      </div>
+    </aside>
+
+    <div class="content-column blog-content">
+      <article class="article-content" aria-labelledby="article-title">
+        <header class="article-heading">
+          <p class="article-context"><a href="../">Back to all notes</a></p>
+          <h2 id="article-title">About This Blog</h2>
+          <p class="article-date"><time datetime="2026-08-11">August 11, 2026</time></p>
+        </header>
+
+        <div class="post-content">
+          <p>
+            This blog will collect short notes on physics, mathematics, computation, and education.
+            It is intended as a place to organize ideas developed through coursework, reading,
+            and early research practice.
+          </p>
+          <p>
+            The emphasis will be on clear questions, careful reasoning, and concise exposition.
+            Future entries may include reading notes, derivations, computational experiments,
+            and reflections on physics education.
+          </p>
+        </div>
+      </article>
+    </div>
   </main>
 </body>
 </html>

@@ -20,6 +20,9 @@ lizr-phys.github.io/
 |   `-- about-this-blog/
 |       `-- index.html
 |-- assets/
+|   |-- avatar.jpg
+|   |-- qingdao-university-logo.jpg
+|   |-- tal-education-logo.png
 |   `-- resume.pdf
 `-- README.md
 ```
@@ -44,7 +47,7 @@ The "Download CV" link in `index.html` already points to that file.
 
 ## Update Links
 
-Edit the "More" section in `index.html` to update GitHub, Blog, Bilibili, or other links.
+Edit the profile links in the `<aside>` element of `index.html` to update Email, GitHub, Blog, CV, or other links.
 
 The blog is part of the same GitHub Pages site at `/blog/`. Edit `blog/index.html` to update the post list and add each article in its own folder under `blog/`.
 
@@ -68,6 +71,12 @@ target="_blank" rel="noopener noreferrer"
 Open `index.html` directly in a browser.
 
 No build step, framework, package manager, backend, database, login system, or server is required.
+
+## Image Sources
+
+- The profile image was supplied by Zhuoran Li.
+- The Qingdao University emblem is from the university's official visual identity page.
+- The TAL Education Group logo is from the company's official investor relations website.
 
 ## Local Backup
 

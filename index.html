@@ -5,73 +5,150 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Personal homepage of Zhuoran Li, undergraduate student in Physics at Qingdao University.">
   <title>Zhuoran Li</title>
-  <link rel="stylesheet" href="style.css?v=20260811-site-links">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css?v=20260811-color-sidebar">
 </head>
-<body>
-  <main class="page">
-    <header class="site-heading" aria-labelledby="page-title">
-      <h1 id="page-title"><a class="site-title-link" href="./">Zhuoran Li</a></h1>
-      <p>Undergraduate Student in Physics, Qingdao University</p>
-    </header>
+<body id="top">
+  <header class="topbar">
+    <nav class="section-nav" aria-label="Section navigation">
+      <a class="nav-name" href="./" aria-label="Zhuoran Li homepage">Zhuoran Li</a>
+      <div class="nav-links">
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#internship">Internship</a>
+        <a href="#research">Research</a>
+      </div>
+    </nav>
+  </header>
 
-    <section aria-labelledby="about-me">
-      <h2 id="about-me">About Me</h2>
-      <p>
-        Zhuoran Li<br>
-        Undergraduate Student in Physics<br>
-        Qingdao University<br>
-        Email: <a href="mailto:lizr_phys@163.com">lizr_phys@163.com</a>
-      </p>
-      <p><a href="assets/resume.pdf">Download CV</a></p>
-    </section>
+  <main class="site-shell">
+    <aside class="profile-column" aria-label="Profile and contact information">
+      <div class="profile-sticky">
+        <img
+          class="profile-image"
+          src="assets/avatar.jpg"
+          alt="Illustrated portrait of Zhuoran Li working at a laptop"
+          width="1024"
+          height="1024"
+        >
 
-    <section aria-labelledby="education">
-      <h2 id="education">Education</h2>
-      <p>
-        Qingdao University<br>
-        B.Sc. in Physics<br>
-        September 2024 &ndash; Present
-      </p>
-    </section>
+        <div class="profile-heading">
+          <h1><a href="./">Zhuoran Li</a></h1>
+          <p>Undergraduate Student in Physics</p>
+          <p>Qingdao University</p>
+        </div>
 
-    <section aria-labelledby="work-experience">
-      <h2 id="work-experience">Internship Experience</h2>
-      <p>TAL Education Group<br>
-         Teaching and Curriculum Research, Think Academy<br>
-         Mathematics Competition Programs for Overseas Upper-Elementary Students<br>
-         June 2026 &ndash; August 2026
-      </p>
-    </section>
+        <dl class="profile-links">
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:lizr_phys@163.com">lizr_phys@163.com</a></dd>
+          </div>
+          <div>
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/lizr-phys" target="_blank" rel="noopener noreferrer">lizr-phys</a></dd>
+          </div>
+          <div>
+            <dt>Blog</dt>
+            <dd><a href="blog/">Visit the blog</a></dd>
+          </div>
+          <div>
+            <dt>CV</dt>
+            <dd><a href="assets/resume.pdf">Download CV</a></dd>
+          </div>
+        </dl>
+      </div>
+    </aside>
 
-    <section aria-labelledby="research">
-      <h2 id="research">Research</h2>
+    <div class="content-column">
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
+        <p class="lead">
+          I am an undergraduate student in Physics at Qingdao University. My interests include mathematical physics, physics-informed neural networks, quantum information and quantum computation, and the transformation of educational models in the age of artificial intelligence.
+        </p>
+      </section>
 
-      <h3>Research Interests</h3>
-      <p>
-        My interests focus on mathematical physics and quantum computation theory.
-      </p>
+      <section id="education" aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <article class="institution-entry">
+          <a
+            class="logo-frame"
+            href="https://www.qdu.edu.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the official Qingdao University website"
+          >
+            <img
+              class="institution-logo qdu-logo"
+              src="assets/qingdao-university-logo.jpg"
+              alt="Qingdao University emblem"
+              width="540"
+              height="397"
+              loading="lazy"
+            >
+          </a>
+          <div class="entry-content">
+            <h3>Qingdao University</h3>
+            <p>B.Sc. in Physics</p>
+            <p class="entry-date"><time datetime="2024-09">September 2024</time> &ndash; Present</p>
+          </div>
+        </article>
+      </section>
 
-      <h3>Research Directions</h3>
-      <ul>
-        <li>Physics education.</li>
-        <li>Physics-informed neural networks.</li>
-        <li>Spectral graph theory and Max-Cut problems.</li>
-      </ul>
+      <section id="internship" aria-labelledby="internship-heading">
+        <h2 id="internship-heading">Internship Experience</h2>
+        <article class="institution-entry">
+          <a
+            class="logo-frame tal-logo-frame"
+            href="https://www.tal.com/en-us"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the official TAL Education Group website"
+          >
+            <img
+              class="institution-logo tal-logo"
+              src="assets/tal-education-logo.png"
+              alt="TAL Education Group logo"
+              width="750"
+              height="188"
+              loading="lazy"
+            >
+          </a>
+          <div class="entry-content">
+            <h3>TAL Education Group</h3>
+            <p>Teaching and Curriculum Research, Think Academy</p>
+            <p>Mathematics Competition Programs for Overseas Upper-Elementary Students</p>
+            <p class="entry-date"><time datetime="2026-06">June 2026</time> &ndash; <time datetime="2026-08">August 2026</time></p>
+          </div>
+        </article>
+      </section>
 
-      <h3>Publications</h3>
-      <p>To be updated.</p>
-    </section>
+      <section id="research" aria-labelledby="research-heading">
+        <h2 id="research-heading">Research</h2>
 
-    <section aria-labelledby="more">
-      <h2 id="more">More</h2>
-      <p>
-        GitHub: <a href="https://github.com/lizr-phys" target="_blank" rel="noopener noreferrer">https://github.com/lizr-phys</a>
-      </p>
-      <p>
-        Blog: <a href="blog/">https://lizr-phys.github.io/blog/</a>
-      </p>
-      <p>Last updated: August 2026.</p>
-    </section>
+        <div class="research-block">
+          <h3>Research Interests</h3>
+          <p>My interests focus on mathematical physics and quantum computation theory.</p>
+        </div>
+
+        <div class="research-block">
+          <h3>Research Directions</h3>
+          <ul>
+            <li>Physics education.</li>
+            <li>Physics-informed neural networks.</li>
+            <li>Spectral graph theory and Max-Cut problems.</li>
+          </ul>
+        </div>
+
+        <div class="research-block">
+          <h3>Publications</h3>
+          <p>To be updated.</p>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>Last updated: August 2026.</p>
+      </footer>
+    </div>
   </main>
 </body>
 </html>

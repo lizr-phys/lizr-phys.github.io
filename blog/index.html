@@ -6,30 +6,78 @@
   <meta name="description" content="Academic notes by Zhuoran Li on physics, mathematics, computation, and education.">
   <title>Blog | Zhuoran Li</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../style.css?v=20260811-site-links">
-  <link rel="stylesheet" href="blog.css?v=20260811-site-links">
+  <link rel="stylesheet" href="../style.css?v=20260811-color-sidebar">
+  <link rel="stylesheet" href="blog.css?v=20260811-color-sidebar">
 </head>
-<body>
-  <main class="page blog-page">
-    <header class="site-heading" aria-labelledby="page-title">
-      <h1 id="page-title"><a class="site-title-link" href="../">Zhuoran Li</a></h1>
-    </header>
+<body id="top">
+  <header class="topbar">
+    <nav class="section-nav blog-nav" aria-label="Blog navigation">
+      <a class="nav-name" href="../" aria-label="Zhuoran Li homepage">Zhuoran Li</a>
+      <div class="nav-links">
+        <a href="../">Home</a>
+        <a href="./" aria-current="page">Blog</a>
+      </div>
+    </nav>
+  </header>
 
-    <section aria-labelledby="blog-heading">
-      <h2 id="blog-heading">Blog</h2>
+  <main class="site-shell blog-shell">
+    <aside class="profile-column" aria-label="Profile and contact information">
+      <div class="profile-sticky">
+        <img
+          class="profile-image"
+          src="../assets/avatar.jpg"
+          alt="Illustrated portrait of Zhuoran Li working at a laptop"
+          width="1024"
+          height="1024"
+        >
 
-      <p class="blog-introduction">Short notes, reading records, and research reflections.</p>
+        <div class="profile-heading">
+          <h1><a href="../">Zhuoran Li</a></h1>
+          <p>Undergraduate Student in Physics</p>
+          <p>Qingdao University</p>
+        </div>
 
-      <ol class="post-list">
-        <li>
-          <time datetime="2026-08-11">August 11, 2026</time>
-          <article>
-            <h3><a href="about-this-blog/">About This Blog</a></h3>
-            <p>This blog will collect concise notes on topics I study and questions I am exploring.</p>
-          </article>
-        </li>
-      </ol>
-    </section>
+        <dl class="profile-links">
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:lizr_phys@163.com">lizr_phys@163.com</a></dd>
+          </div>
+          <div>
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/lizr-phys" target="_blank" rel="noopener noreferrer">lizr-phys</a></dd>
+          </div>
+          <div>
+            <dt>Blog</dt>
+            <dd><a href="./" aria-current="page">Visit the blog</a></dd>
+          </div>
+          <div>
+            <dt>CV</dt>
+            <dd><a href="../assets/resume.pdf">Download CV</a></dd>
+          </div>
+        </dl>
+      </div>
+    </aside>
+
+    <div class="content-column blog-content">
+      <section id="blog" aria-labelledby="blog-heading">
+        <h2 id="blog-heading">Blog</h2>
+        <p class="blog-introduction">Short notes, reading records, and research reflections.</p>
+
+        <ol class="post-list">
+          <li>
+            <time datetime="2026-08-11">August 11, 2026</time>
+            <article>
+              <h3><a href="about-this-blog/">About This Blog</a></h3>
+              <p>This blog will collect concise notes on topics I study and questions I am exploring.</p>
+            </article>
+          </li>
+        </ol>
+      </section>
+
+      <footer class="site-footer">
+        <p>Last updated: August 2026.</p>
+      </footer>
+    </div>
   </main>
 </body>
 </html>
