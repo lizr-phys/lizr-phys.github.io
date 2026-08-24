@@ -50,7 +50,7 @@
 }
 
 .post-list p {
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .article-content {
@@ -59,7 +59,7 @@
 }
 
 .article-heading h2 {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 .article-context {
@@ -99,7 +99,7 @@
 
   .post-list > li {
     grid-template-columns: 1fr;
-    gap: 7px;
+    gap: 4px;
   }
 }
 

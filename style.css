@@ -333,11 +333,11 @@ ul {
 }
 
 .entry-content p + p {
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .entry-date {
-  margin-top: 8px !important;
+  margin-top: 4px !important;
 }
 
 .research-block + .research-block {
