@@ -338,8 +338,6 @@ ul {
 
 .entry-date {
   margin-top: 8px !important;
-  color: var(--muted);
-  font-size: 0.94rem;
 }
 
 .research-block + .research-block {
@@ -352,15 +350,6 @@ ul {
 
 .research-block li + li {
   margin-top: 3px;
-}
-
-.site-footer {
-  color: var(--muted);
-  font-size: 0.86rem;
-}
-
-.site-footer p {
-  color: inherit;
 }
 
 @media (max-width: 860px) {
