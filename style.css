@@ -283,14 +283,10 @@ ul {
 }
 
 .logo-frame {
-  box-sizing: border-box;
   width: var(--logo-size);
   height: var(--logo-size);
   display: grid;
   place-items: center;
-  border: 1px solid var(--rule);
-  border-radius: 50%;
-  background: #ffffff;
   text-decoration: none;
 }
 
@@ -314,9 +310,10 @@ ul {
 }
 
 .qdu-logo {
-  width: calc(var(--logo-size) - 6px);
-  position: relative;
-  left: 0;
+  width: auto;
+  height: 72px;
+  max-width: none;
+  max-height: none;
   object-fit: contain;
 }
 
@@ -329,12 +326,12 @@ ul {
 
 .tal-logo {
   position: relative;
-  left: 8px;
+  left: 9px;
   width: auto;
-  height: 76px;
+  height: 72px;
   max-width: none;
   max-height: none;
-  clip-path: inset(0 calc(100% - 62px) 0 0);
+  clip-path: inset(0 calc(100% - 59px) 0 0);
 }
 
 .uestc-logo {
@@ -480,18 +477,18 @@ ul {
   }
 
   .tal-logo {
-    left: 6px;
-    height: 60px;
-    clip-path: inset(0 calc(100% - 49px) 0 0);
+    left: 8px;
+    height: 56px;
+    clip-path: inset(0 calc(100% - 46px) 0 0);
   }
 
   .qdu-logo {
-    width: calc(var(--logo-size) - 6px);
+    height: 56px;
   }
 
   .uestc-logo {
-    width: 58px;
-    height: 58px;
+    width: 56px;
+    height: 56px;
   }
 }
 
