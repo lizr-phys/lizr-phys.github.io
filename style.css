@@ -7,6 +7,7 @@
   --page-width: 1080px;
   --sidebar-width: 205px;
   --logo-size: 78px;
+  --subheading-size: 1.1rem;
   --rule: #cfcfcf;
   --muted: #4a4a4a;
 }
@@ -256,7 +257,7 @@ h2::after {
 
 h3 {
   margin: 0 0 4px;
-  font-size: 1.05rem;
+  font-size: var(--subheading-size);
   font-weight: 700;
   line-height: 1.35;
 }
@@ -311,7 +312,7 @@ ul {
 
 .qdu-logo {
   width: auto;
-  height: 76px;
+  height: 74px;
   max-width: none;
   max-height: none;
   object-fit: contain;
@@ -483,7 +484,7 @@ ul {
   }
 
   .qdu-logo {
-    height: 59px;
+    height: 58px;
   }
 
   .uestc-logo {
