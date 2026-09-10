@@ -166,7 +166,7 @@ a:focus-visible {
 
 .profile-heading h1 {
   margin: 0 0 4px;
-  font-size: 1.5rem;
+  font-size: 1.52rem;
   font-weight: 700;
   line-height: 1.15;
 }
@@ -189,7 +189,7 @@ a:focus-visible {
   margin: 12px 0 0;
   padding-top: 8px;
   border-top: 1px solid #000000;
-  font-size: 0.84rem;
+  font-size: 0.85rem;
 }
 
 .profile-links > div {
@@ -312,7 +312,7 @@ ul {
 
 .qdu-logo {
   width: auto;
-  height: 74px;
+  height: 72px;
   max-width: none;
   max-height: none;
   object-fit: contain;
@@ -484,7 +484,7 @@ ul {
   }
 
   .qdu-logo {
-    height: 58px;
+    height: 56px;
   }
 
   .uestc-logo {
