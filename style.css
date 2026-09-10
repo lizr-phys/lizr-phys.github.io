@@ -312,9 +312,11 @@ ul {
 
 .qdu-logo {
   width: auto;
-  height: 72px;
+  height: 70px;
   max-width: none;
   max-height: none;
+  position: relative;
+  left: 2px;
   object-fit: contain;
 }
 
@@ -484,7 +486,7 @@ ul {
   }
 
   .qdu-logo {
-    height: 56px;
+    height: 54px;
   }
 
   .uestc-logo {
