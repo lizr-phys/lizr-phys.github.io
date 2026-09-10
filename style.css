@@ -316,7 +316,7 @@ ul {
   max-width: none;
   max-height: none;
   position: relative;
-  left: 1px;
+  left: 4px;
   object-fit: contain;
 }
 
