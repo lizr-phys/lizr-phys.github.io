@@ -23,6 +23,7 @@ lizr-phys.github.io/
 |   |-- avatar.jpg
 |   |-- qingdao-university-logo.jpg
 |   |-- tal-education-logo.png
+|   |-- uestc-logo.webp
 |   `-- resume.pdf
 `-- README.md
 ```
@@ -31,7 +32,7 @@ The CV PDF is stored at `assets/resume.pdf`.
 
 ## Update Personal Information
 
-Edit `index.html` to update the name, email address, university, education details, research interests, publications, and other academic information.
+Edit `index.html` to update the name, email address, university, education details, internship entries, research interests, Physlib contributions, publications, and other academic information.
 
 Do not add unverified positions, awards, publications, DOI links, arXiv links, or dates.
 

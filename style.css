@@ -251,11 +251,6 @@ h2::after {
   height: 1px;
   background: #000000;
   content: "";
-  transition: width 180ms ease;
-}
-
-section:target h2::after {
-  width: 82px;
 }
 
 h3 {
@@ -280,6 +275,10 @@ ul {
   grid-template-columns: 78px minmax(0, 1fr);
   gap: 24px;
   align-items: start;
+}
+
+.institution-entry + .institution-entry {
+  margin-top: 26px;
 }
 
 .logo-frame {
@@ -338,6 +337,10 @@ ul {
 
 .entry-date {
   margin-top: 4px !important;
+}
+
+.contribution-entry + .contribution-entry {
+  margin-top: 22px;
 }
 
 .research-block + .research-block {
@@ -406,7 +409,11 @@ ul {
   .nav-links {
     width: 100%;
     justify-content: space-between;
-    gap: 12px;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
   }
 
   .site-shell {
