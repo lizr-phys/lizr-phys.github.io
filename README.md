@@ -82,3 +82,4 @@ No build step, framework, package manager, backend, database, login system, or s
 ## Local Backup
 
 The previous site files were moved locally into `backup_old_site/` before cleanup. That directory is ignored by Git and should not be pushed to GitHub Pages.
+<!-- rebuild pages -->
