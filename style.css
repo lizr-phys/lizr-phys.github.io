@@ -113,19 +113,12 @@ a:focus-visible {
   color: var(--muted);
 }
 
-.nav-motto:hover,
-.nav-motto:focus-visible {
-  text-decoration: underline;
-}
-
 .profile-motto {
   display: none;
   margin-top: 12px;
   font-size: 0.82rem;
   line-height: 1.4;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-decoration: none;
 }
 
 .nav-motto:focus-visible,
