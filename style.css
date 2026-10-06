@@ -90,6 +90,17 @@ a:focus-visible {
   text-decoration: underline;
 }
 
+.nav-motto,
+.profile-motto {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  font-weight: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
 .nav-motto {
   color: var(--muted);
   font-size: 0.82rem;
@@ -112,6 +123,15 @@ a:focus-visible {
   margin-top: 12px;
   font-size: 0.82rem;
   line-height: 1.4;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.nav-motto:focus-visible,
+.profile-motto:focus-visible {
+  outline: 1px solid #000000;
+  outline-offset: 4px;
 }
 
 .nav-links {
@@ -462,6 +482,11 @@ html:has(.textbook-dialog[open]) {
 .textbook-dialog button:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.textbook-dialog button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .textbook-dialog .textbook-dialog-cancel {

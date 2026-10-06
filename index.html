@@ -6,15 +6,14 @@
   <meta name="description" content="Personal homepage of Zhuoran Li, undergraduate student in Physics at Qingdao University.">
   <title>Zhuoran Li</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="style.css?v=20261006-access">
-  <script src="materials/access.js?v=20261006" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261006-access2">
 </head>
 <body id="top">
   <header class="topbar">
     <nav class="section-nav" aria-label="Section navigation">
       <div class="nav-identity">
         <a class="nav-name" href="./" aria-label="Zhuoran Li homepage">Zhuoran Li</a>
-        <a class="nav-motto" href="materials/" lang="de" aria-label="Recommended Physics Textbooks: Wir müssen wissen. Wir werden wissen." aria-haspopup="dialog" aria-controls="textbook-access-dialog" data-textbook-access>Wir müssen wissen. Wir werden wissen.</a>
+        <button class="nav-motto" type="button" lang="de" aria-label="Recommended Physics Textbooks: Wir müssen wissen. Wir werden wissen." aria-haspopup="dialog" aria-controls="textbook-access-dialog" commandfor="textbook-access-dialog" command="show-modal" data-textbook-access>Wir müssen wissen. Wir werden wissen.</button>
       </div>
       <div class="nav-links">
         <a href="#about">About Me</a>
@@ -42,7 +41,7 @@
           <h1><a href="./">Zhuoran Li</a></h1>
           <p>Undergraduate Student in Physics</p>
           <p>Qingdao University</p>
-          <a class="profile-motto" href="materials/" lang="de" aria-label="Recommended Physics Textbooks: Wir müssen wissen. Wir werden wissen." aria-haspopup="dialog" aria-controls="textbook-access-dialog" data-textbook-access>Wir müssen wissen. Wir werden wissen.</a>
+          <button class="profile-motto" type="button" lang="de" aria-label="Recommended Physics Textbooks: Wir müssen wissen. Wir werden wissen." aria-haspopup="dialog" aria-controls="textbook-access-dialog" commandfor="textbook-access-dialog" command="show-modal" data-textbook-access>Wir müssen wissen. Wir werden wissen.</button>
         </div>
 
         <dl class="profile-links">
@@ -245,10 +244,84 @@
       >
       <p class="textbook-dialog-error" id="textbook-access-error" aria-live="polite"></p>
       <div class="textbook-dialog-actions">
-        <button class="textbook-dialog-cancel" type="button" data-textbook-cancel>Cancel</button>
-        <button type="submit">Continue</button>
+        <button class="textbook-dialog-cancel" type="button" commandfor="textbook-access-dialog" command="close" data-textbook-cancel>Cancel</button>
+        <button type="submit" disabled>Continue</button>
       </div>
+      <noscript><p class="textbook-dialog-error">Enable JavaScript to check your answer.</p></noscript>
     </form>
   </dialog>
+  <script>
+    (() => {
+      const dialog = document.getElementById("textbook-access-dialog");
+      if (!dialog || typeof dialog.showModal !== "function") return;
+
+      const form = document.getElementById("textbook-access-form");
+      const answer = document.getElementById("textbook-answer");
+      const error = document.getElementById("textbook-access-error");
+      const acceptedAnswers = new Set([
+        "dirac",
+        "pauldirac",
+        "pauladrienmauricedirac",
+        "paulamdirac",
+        "pamdirac",
+        "\u72c4\u62c9\u514b",
+        "\u4fdd\u7f57\u72c4\u62c9\u514b",
+        "\u4fdd\u7f57\u963f\u5fb7\u91cc\u5b89\u83ab\u91cc\u65af\u72c4\u62c9\u514b",
+        "\u4fdd\u7f85\u72c4\u62c9\u514b"
+      ]);
+      let trigger;
+
+      const clearError = () => {
+        error.textContent = "";
+        answer.removeAttribute("aria-invalid");
+      };
+
+      document.querySelectorAll("[data-textbook-access]").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          if (dialog.open) return;
+
+          trigger = button;
+          form.reset();
+          clearError();
+          dialog.showModal();
+        });
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const normalized = answer.value
+          .normalize("NFKC")
+          .toLowerCase()
+          .replace(/[\s.,\u00b7\u2022\u30fb\u2010-\u2015-]+/g, "");
+
+        if (!acceptedAnswers.has(normalized)) {
+          error.textContent = normalized
+            ? "Incorrect answer. Please try again."
+            : "Please enter an answer.";
+          answer.setAttribute("aria-invalid", "true");
+          answer.focus();
+          answer.select();
+          return;
+        }
+
+        dialog.close();
+        window.location.assign("materials/");
+      });
+
+      answer.addEventListener("input", clearError);
+      dialog.querySelector("[data-textbook-cancel]").addEventListener("click", (event) => {
+        event.preventDefault();
+        dialog.close();
+      });
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+      dialog.addEventListener("close", () => {
+        trigger?.focus({ preventScroll: true });
+      });
+      form.querySelector('[type="submit"]').disabled = false;
+    })();
+  </script>
 </body>
 </html>

@@ -62,7 +62,9 @@ The blog is part of the same GitHub Pages site at `/blog/`. Edit `blog/index.htm
 
 The academic motto opens a short question before navigating to the textbook downloads page at `/materials/`. On smaller screens, the same entry appears below the profile information. Press Enter or select Continue to submit; Cancel, Escape, or clicking outside closes the dialog.
 
-Edit the question in `index.html` and accepted names in `materials/access.js`. Answers are matched locally without a network request, ignoring case, whitespace, and common name punctuation. The question is an entry interaction, not access control: the source, the materials page, and direct PDF links remain public on GitHub Pages.
+Edit the question and accepted names in `index.html`. The small validation script is included in the homepage to avoid a separate script request. Answers are matched locally without a network request, ignoring case, whitespace, and common name punctuation. The signature uses a native dialog button; if JavaScript is disabled, the dialog explains how to enable verification and Continue stays disabled. The question is an entry interaction, not access control: the source, the materials page, and direct PDF links remain public on GitHub Pages.
+
+`materials/access.js` is retained for compatibility with previously cached homepage HTML; the current homepage does not load it.
 
 Place textbook PDFs in `materials/files/`, using only the English book title as the filename. Edit `materials/index.html` to add or update the book title, verified authors, edition, corresponding course, file size, and download link. Encode spaces in link URLs as `%20` and keep the `download` filename equal to the actual PDF filename.
 
