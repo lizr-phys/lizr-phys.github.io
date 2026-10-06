@@ -92,9 +92,13 @@ a:focus-visible {
 
 .nav-motto,
 .profile-motto {
+  -webkit-appearance: none;
+  appearance: none;
   padding: 0;
   border: 0;
   background: none;
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
   font-family: inherit;
   font-weight: inherit;
   text-align: left;
