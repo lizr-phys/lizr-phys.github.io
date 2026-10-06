@@ -14,6 +14,11 @@ https://lizr-phys.github.io
 lizr-phys.github.io/
 |-- index.html
 |-- style.css
+|-- materials/
+|   |-- index.html
+|   |-- materials.css
+|   `-- files/
+|       `-- *.pdf
 |-- blog/
 |   |-- index.html
 |   |-- blog.css
@@ -51,6 +56,14 @@ The "Download CV" link in `index.html` already points to that file.
 Edit the profile links in the `<aside>` element of `index.html` to update Email, GitHub, Blog, CV, or other links.
 
 The blog is part of the same GitHub Pages site at `/blog/`. Edit `blog/index.html` to update the post list and add each article in its own folder under `blog/`.
+
+## Recommended Physics Textbooks
+
+The academic motto links to the textbook downloads page at `/materials/`. On smaller screens, the same link appears below the profile information.
+
+Place textbook PDFs in `materials/files/`, using only the English book title as the filename. Edit `materials/index.html` to add or update the book title, verified authors, edition, corresponding course, file size, and download link. Encode spaces in link URLs as `%20` and keep the `download` filename equal to the actual PDF filename.
+
+Files published here are publicly downloadable. PDFs are fetched only when a visitor chooses a download, so their size does not affect the homepage's initial load.
 
 External links should use:
 

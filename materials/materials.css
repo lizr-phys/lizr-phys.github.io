@@ -1,0 +1,37 @@
+.materials-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.materials-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.materials-entry {
+  overflow-wrap: anywhere;
+  break-inside: avoid;
+}
+
+.materials-entry + .materials-entry {
+  margin-top: 22px;
+}
+
+@media (max-width: 640px) {
+  .materials-nav .nav-name {
+    display: block;
+  }
+
+  .materials-nav .nav-links {
+    width: auto;
+    justify-content: flex-end;
+    gap: 24px;
+  }
+}
+
+@media print {
+  .materials-content > section {
+    break-inside: auto;
+  }
+}
