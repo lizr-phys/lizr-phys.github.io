@@ -17,6 +17,7 @@ lizr-phys.github.io/
 |-- materials/
 |   |-- index.html
 |   |-- materials.css
+|   |-- access.js
 |   `-- files/
 |       `-- *.pdf
 |-- blog/
@@ -59,7 +60,9 @@ The blog is part of the same GitHub Pages site at `/blog/`. Edit `blog/index.htm
 
 ## Recommended Physics Textbooks
 
-The academic motto links to the textbook downloads page at `/materials/`. On smaller screens, the same link appears below the profile information.
+The academic motto opens a short question before navigating to the textbook downloads page at `/materials/`. On smaller screens, the same entry appears below the profile information. Press Enter or select Continue to submit; Cancel, Escape, or clicking outside closes the dialog.
+
+Edit the question in `index.html` and accepted names in `materials/access.js`. Answers are matched locally without a network request, ignoring case, whitespace, and common name punctuation. The question is an entry interaction, not access control: the source, the materials page, and direct PDF links remain public on GitHub Pages.
 
 Place textbook PDFs in `materials/files/`, using only the English book title as the filename. Edit `materials/index.html` to add or update the book title, verified authors, edition, corresponding course, file size, and download link. Encode spaces in link URLs as `%20` and keep the `download` filename equal to the actual PDF filename.
 

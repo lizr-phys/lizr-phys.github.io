@@ -6,14 +6,15 @@
   <meta name="description" content="Personal homepage of Zhuoran Li, undergraduate student in Physics at Qingdao University.">
   <title>Zhuoran Li</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="style.css?v=20261006-materials">
+  <link rel="stylesheet" href="style.css?v=20261006-access">
+  <script src="materials/access.js?v=20261006" defer></script>
 </head>
 <body id="top">
   <header class="topbar">
     <nav class="section-nav" aria-label="Section navigation">
       <div class="nav-identity">
         <a class="nav-name" href="./" aria-label="Zhuoran Li homepage">Zhuoran Li</a>
-        <a class="nav-motto" href="materials/" lang="de" aria-label="Recommended Physics Textbooks: Wir müssen wissen. Wir werden wissen.">Wir müssen wissen. Wir werden wissen.</a>
+        <a class="nav-motto" href="materials/" lang="de" aria-label="Recommended Physics Textbooks: Wir müssen wissen. Wir werden wissen." aria-haspopup="dialog" aria-controls="textbook-access-dialog" data-textbook-access>Wir müssen wissen. Wir werden wissen.</a>
       </div>
       <div class="nav-links">
         <a href="#about">About Me</a>
@@ -41,7 +42,7 @@
           <h1><a href="./">Zhuoran Li</a></h1>
           <p>Undergraduate Student in Physics</p>
           <p>Qingdao University</p>
-          <a class="profile-motto" href="materials/" lang="de" aria-label="Recommended Physics Textbooks: Wir müssen wissen. Wir werden wissen.">Wir müssen wissen. Wir werden wissen.</a>
+          <a class="profile-motto" href="materials/" lang="de" aria-label="Recommended Physics Textbooks: Wir müssen wissen. Wir werden wissen." aria-haspopup="dialog" aria-controls="textbook-access-dialog" data-textbook-access>Wir müssen wissen. Wir werden wissen.</a>
         </div>
 
         <dl class="profile-links">
@@ -226,5 +227,28 @@
       </footer>
     </div>
   </main>
+
+  <dialog class="textbook-dialog" id="textbook-access-dialog" aria-labelledby="textbook-access-title">
+    <form id="textbook-access-form" method="dialog" novalidate>
+      <h2 id="textbook-access-title">Recommended Physics Textbooks</h2>
+      <label for="textbook-answer">Which physicist do I admire most?</label>
+      <input
+        id="textbook-answer"
+        name="answer"
+        type="text"
+        maxlength="120"
+        autocomplete="off"
+        autocapitalize="none"
+        spellcheck="false"
+        aria-describedby="textbook-access-error"
+        autofocus
+      >
+      <p class="textbook-dialog-error" id="textbook-access-error" aria-live="polite"></p>
+      <div class="textbook-dialog-actions">
+        <button class="textbook-dialog-cancel" type="button" data-textbook-cancel>Cancel</button>
+        <button type="submit">Continue</button>
+      </div>
+    </form>
+  </dialog>
 </body>
 </html>

@@ -391,6 +391,91 @@ ul {
   margin-top: 3px;
 }
 
+html:has(.textbook-dialog[open]) {
+  overflow: hidden;
+}
+
+.textbook-dialog {
+  width: min(420px, calc(100% - 40px));
+  max-height: calc(100dvh - 40px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #000000;
+  background: #ffffff;
+  color: #000000;
+}
+
+.textbook-dialog::backdrop {
+  background: rgb(0 0 0 / 16%);
+}
+
+.textbook-dialog form {
+  padding: 24px;
+}
+
+.textbook-dialog h2 {
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+}
+
+.textbook-dialog label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.textbook-dialog input {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid #000000;
+  border-radius: 0;
+  background: #ffffff;
+  color: #000000;
+  font: inherit;
+  font-size: max(1rem, 16px);
+}
+
+.textbook-dialog-error {
+  min-height: 1.5em;
+  margin-top: 8px;
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.textbook-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.textbook-dialog button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid #000000;
+  background: #ffffff;
+  color: #000000;
+  font: inherit;
+  cursor: pointer;
+}
+
+.textbook-dialog button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.textbook-dialog .textbook-dialog-cancel {
+  border-color: transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.textbook-dialog input:focus-visible,
+.textbook-dialog button:focus-visible {
+  outline: 1px solid #000000;
+  outline-offset: 3px;
+}
+
 @media (max-width: 860px) {
   .site-shell {
     grid-template-columns: 1fr;
@@ -544,6 +629,10 @@ ul {
 
   .topbar {
     display: none;
+  }
+
+  .textbook-dialog {
+    display: none !important;
   }
 
   .site-shell {
