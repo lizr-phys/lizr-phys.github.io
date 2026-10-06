@@ -484,7 +484,7 @@ html:has(.textbook-dialog[open]) {
 
 .textbook-dialog .textbook-dialog-cancel {
   border-color: transparent;
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 3px;
 }
 
