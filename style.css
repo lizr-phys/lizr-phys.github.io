@@ -211,14 +211,6 @@ a:focus-visible {
   line-height: 1.15;
 }
 
-.profile-heading h1 a {
-  text-decoration: none;
-}
-
-.profile-heading h1 a:hover {
-  text-decoration: underline;
-}
-
 .profile-heading p {
   margin: 0;
   font-size: 0.84rem;
