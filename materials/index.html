@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Recommended physics textbooks selected by Zhuoran Li, with authors, corresponding courses, and PDF downloads.">
-  <title>Recommended Physics Textbooks | Zhuoran Li</title>
+  <meta name="description" content="Recommended learning resources selected by Zhuoran Li, including online courses, lecture notes, and physics textbooks.">
+  <title>Recommended Learning Resources | Zhuoran Li</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="../style.css?v=20261006-materials">
-  <link rel="stylesheet" href="materials.css?v=20261006">
+  <link rel="stylesheet" href="materials.css?v=20261009-resources">
 </head>
 <body id="top">
   <header class="topbar">
@@ -15,7 +15,7 @@
       <a class="nav-name" href="../" aria-label="Zhuoran Li homepage">Zhuoran Li</a>
       <div class="nav-links">
         <a href="../">Home</a>
-        <a href="./" aria-current="page">Textbooks</a>
+        <a href="./" aria-current="page">Resources</a>
       </div>
     </nav>
   </header>
@@ -62,45 +62,66 @@
     </aside>
 
     <div class="content-column materials-content">
-      <section id="textbooks" aria-labelledby="textbooks-heading">
-        <h2 id="textbooks-heading">Recommended Physics Textbooks</h2>
+      <section id="learning-resources" aria-labelledby="learning-resources-heading">
+        <h2 id="learning-resources-heading">Recommended Learning Resources</h2>
 
-        <ul class="materials-list">
-          <li class="materials-entry entry-content">
-            <h3>The Feynman Lectures on Physics</h3>
-            <p>Authors: Richard P. Feynman, Robert B. Leighton, and Matthew Sands</p>
-            <p>Edition: Volumes I&ndash;III, New Millennium Edition</p>
-            <p>Course: General Physics</p>
-            <p><a href="files/The%20Feynman%20Lectures%20on%20Physics.pdf" download="The Feynman Lectures on Physics.pdf" aria-label="Download The Feynman Lectures on Physics as a PDF">Download PDF</a> (31.3 MB)</p>
-          </li>
-          <li class="materials-entry entry-content">
-            <h3>Classical Mechanics</h3>
-            <p>Authors: Herbert Goldstein, Charles P. Poole, and John L. Safko</p>
-            <p>Edition: 3rd edition</p>
-            <p>Course: Theoretical Mechanics</p>
-            <p><a href="files/Classical%20Mechanics.pdf" download="Classical Mechanics.pdf" aria-label="Download Classical Mechanics as a PDF">Download PDF</a> (10.2 MB)</p>
-          </li>
-          <li class="materials-entry entry-content">
-            <h3>Introduction to Electrodynamics</h3>
-            <p>Author: David J. Griffiths</p>
-            <p>Edition: 5th edition</p>
-            <p>Course: Electrodynamics</p>
-            <p><a href="files/Introduction%20to%20Electrodynamics.pdf" download="Introduction to Electrodynamics.pdf" aria-label="Download Introduction to Electrodynamics as a PDF">Download PDF</a> (13.1 MB)</p>
-          </li>
-          <li class="materials-entry entry-content">
-            <h3>Introduction to Quantum Mechanics</h3>
-            <p>Authors: David J. Griffiths and Darrell F. Schroeter</p>
-            <p>Edition: 3rd edition</p>
-            <p>Course: Quantum Mechanics</p>
-            <p><a href="files/Introduction%20to%20Quantum%20Mechanics.pdf" download="Introduction to Quantum Mechanics.pdf" aria-label="Download Introduction to Quantum Mechanics as a PDF">Download PDF</a> (27.7 MB)</p>
-          </li>
-          <li class="materials-entry entry-content">
-            <h3>Statistical Physics of Particles</h3>
-            <p>Author: Mehran Kardar</p>
-            <p>Course: Thermodynamics and Statistical Physics</p>
-            <p><a href="files/Statistical%20Physics%20of%20Particles.pdf" download="Statistical Physics of Particles.pdf" aria-label="Download Statistical Physics of Particles as a PDF">Download PDF</a> (2.8 MB)</p>
-          </li>
-        </ul>
+        <div class="materials-group" id="courses">
+          <h3>Courses</h3>
+          <ul class="materials-list">
+            <li class="materials-entry entry-content">
+              <h4><a href="https://jhwatrous.github.io/books-and-courses.html" target="_blank" rel="noopener noreferrer">Understanding Quantum Information and Computation</a></h4>
+              <p>Instructor: John Watrous</p>
+              <p>Course: Quantum Information and Quantum Computation</p>
+              <p>I use this course for self-study in quantum computation theory. The complete 16-lesson video series is available on YouTube, with accompanying lecture notes and slides. The written course material is also available on IBM Quantum Learning.</p>
+              <p>
+                <a href="https://www.youtube.com/playlist?list=PLOFEBzvs-VvqKKMXX4vbi4EB1uaErFMSO" target="_blank" rel="noopener noreferrer">Video lectures</a> /
+                <a href="https://jhwatrous.github.io/UQIC.pdf" target="_blank" rel="noopener noreferrer">Lecture notes (PDF)</a> /
+                <a href="https://jhwatrous.github.io/books-and-courses.html#videos-and-slides" target="_blank" rel="noopener noreferrer">Lecture slides</a> /
+                <a href="https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information" target="_blank" rel="noopener noreferrer">IBM Quantum Learning</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="materials-group" id="textbooks">
+          <h3>Textbooks</h3>
+          <ul class="materials-list">
+            <li class="materials-entry entry-content">
+              <h4>The Feynman Lectures on Physics</h4>
+              <p>Authors: Richard P. Feynman, Robert B. Leighton, and Matthew Sands</p>
+              <p>Edition: Volumes I&ndash;III, New Millennium Edition</p>
+              <p>Course: General Physics</p>
+              <p><a href="files/The%20Feynman%20Lectures%20on%20Physics.pdf" download="The Feynman Lectures on Physics.pdf" aria-label="Download The Feynman Lectures on Physics as a PDF">Download PDF</a> (31.3 MB)</p>
+            </li>
+            <li class="materials-entry entry-content">
+              <h4>Classical Mechanics</h4>
+              <p>Authors: Herbert Goldstein, Charles P. Poole, and John L. Safko</p>
+              <p>Edition: 3rd edition</p>
+              <p>Course: Theoretical Mechanics</p>
+              <p><a href="files/Classical%20Mechanics.pdf" download="Classical Mechanics.pdf" aria-label="Download Classical Mechanics as a PDF">Download PDF</a> (10.2 MB)</p>
+            </li>
+            <li class="materials-entry entry-content">
+              <h4>Introduction to Electrodynamics</h4>
+              <p>Author: David J. Griffiths</p>
+              <p>Edition: 5th edition</p>
+              <p>Course: Electrodynamics</p>
+              <p><a href="files/Introduction%20to%20Electrodynamics.pdf" download="Introduction to Electrodynamics.pdf" aria-label="Download Introduction to Electrodynamics as a PDF">Download PDF</a> (13.1 MB)</p>
+            </li>
+            <li class="materials-entry entry-content">
+              <h4>Introduction to Quantum Mechanics</h4>
+              <p>Authors: David J. Griffiths and Darrell F. Schroeter</p>
+              <p>Edition: 3rd edition</p>
+              <p>Course: Quantum Mechanics</p>
+              <p><a href="files/Introduction%20to%20Quantum%20Mechanics.pdf" download="Introduction to Quantum Mechanics.pdf" aria-label="Download Introduction to Quantum Mechanics as a PDF">Download PDF</a> (27.7 MB)</p>
+            </li>
+            <li class="materials-entry entry-content">
+              <h4>Statistical Physics of Particles</h4>
+              <p>Author: Mehran Kardar</p>
+              <p>Course: Thermodynamics and Statistical Physics</p>
+              <p><a href="files/Statistical%20Physics%20of%20Particles.pdf" download="Statistical Physics of Particles.pdf" aria-label="Download Statistical Physics of Particles as a PDF">Download PDF</a> (2.8 MB)</p>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <footer class="site-footer">

@@ -9,6 +9,23 @@
   list-style: none;
 }
 
+.materials-group + .materials-group {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #000000;
+}
+
+.materials-group > h3 {
+  margin-bottom: 16px;
+}
+
+.materials-entry h4 {
+  margin: 0 0 4px;
+  font-size: var(--subheading-size);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .materials-entry {
   overflow-wrap: anywhere;
   break-inside: avoid;

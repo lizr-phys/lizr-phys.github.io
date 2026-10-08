@@ -58,13 +58,15 @@ Edit the profile links in the `<aside>` element of `index.html` to update Email,
 
 The blog is part of the same GitHub Pages site at `/blog/`. Edit `blog/index.html` to update the post list and add each article in its own folder under `blog/`.
 
-## Recommended Physics Textbooks
+## Recommended Learning Resources
 
-The academic motto opens a short question before navigating to the textbook downloads page at `/materials/`. On smaller screens, the same entry appears below the profile information. Press Enter or select Continue to submit; Cancel, Escape, or clicking outside closes the dialog.
+The academic motto opens a short question before navigating to the learning resources page at `/materials/`. On smaller screens, the same entry appears below the profile information. Press Enter or select Continue to submit; Cancel, Escape, or clicking outside closes the dialog.
 
 Edit the question and accepted names in `index.html`. The small validation script is included in the homepage to avoid a separate script request. Answers are matched locally without a network request, ignoring case, whitespace, and common name punctuation. The signature uses a native dialog button; if JavaScript is disabled, the dialog explains how to enable verification and Continue stays disabled. The question is an entry interaction, not access control: the source, the materials page, and direct PDF links remain public on GitHub Pages.
 
 `materials/access.js` is retained for compatibility with previously cached homepage HTML; the current homepage does not load it.
+
+The page separates Courses from Textbooks. Add courses in the `courses` group of `materials/index.html`, including the course title, instructor, subject, a brief personal note, and verified links to videos, lecture notes, slides, or official course pages. The John Watrous course links to the author's overview, the complete Qiskit YouTube playlist, lecture notes, slides, and IBM Quantum Learning. Course resources are linked externally rather than embedded or copied into the repository.
 
 Place textbook PDFs in `materials/files/`, using only the English book title as the filename. Edit `materials/index.html` to add or update the book title, verified authors, edition, corresponding course, file size, and download link. Encode spaces in link URLs as `%20` and keep the `download` filename equal to the actual PDF filename.
 
