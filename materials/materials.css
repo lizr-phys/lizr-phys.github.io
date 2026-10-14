@@ -9,6 +9,10 @@
   list-style: none;
 }
 
+.materials-intro {
+  margin-bottom: 24px;
+}
+
 .materials-group + .materials-group {
   margin-top: 32px;
   padding-top: 24px;
@@ -32,7 +36,23 @@
 }
 
 .materials-entry + .materials-entry {
-  margin-top: 22px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #000000;
+}
+
+.resource-block {
+  margin-top: 12px;
+}
+
+.resource-files {
+  margin-top: 4px;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.resource-files li + li {
+  margin-top: 4px;
 }
 
 @media (max-width: 640px) {

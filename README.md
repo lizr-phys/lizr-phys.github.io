@@ -66,9 +66,11 @@ Edit the question and accepted names in `index.html`. The small validation scrip
 
 `materials/access.js` is retained for compatibility with previously cached homepage HTML; the current homepage does not load it.
 
-The page separates Courses from Textbooks. Add courses in the `courses` group of `materials/index.html`, including the course title, instructor, subject, a brief personal note, and verified links to videos, lecture notes, slides, or official course pages. The John Watrous course links to the author's overview, the complete Qiskit YouTube playlist, lecture notes, slides, and IBM Quantum Learning. Course resources are linked externally rather than embedded or copied into the repository.
+The page organizes resources by course. Add entries in the `courses` group of `materials/index.html`, including verified links to video lectures, lecture notes, exercises, and recommended English textbooks. These English textbooks are personal recommendations for more detailed self-study, not prescribed references for the video courses. Chinese-language textbooks and notes accompany the Chinese-language lectures.
 
-Place textbook PDFs in `materials/files/`, using only the English book title as the filename. Edit `materials/index.html` to add or update the book title, verified authors, edition, corresponding course, file size, and download link. Encode spaces in link URLs as `%20` and keep the `download` filename equal to the actual PDF filename.
+General Physics links to Yunwenjun's Bilibili channel and five knowledge-summary PDFs. Theoretical Mechanics links to Yanyu Ren's course; Electrodynamics links to Lei Zhou's course and lecture notes; Quantum Mechanics links to the video course, Esheng Chen's problem book and practice workbook, and two worked-solution video series. Thermodynamics and Statistical Physics retains its recommended English textbook while the video course awaits an update. The John Watrous course retains its overview, complete YouTube playlist, lecture notes, slides, and IBM Quantum Learning links. Videos are linked externally and never embedded.
+
+Place resource PDFs in `materials/files/`, using descriptive English titles as filenames. Textbook filenames use the book title; lecture notes, summaries, and workbooks identify the resource type or topic. Keep the supplied PDF contents unchanged. Edit `materials/index.html` to update the verified author, edition, file size, and download link under the corresponding course. Encode spaces in link URLs as `%20` and keep the `download` filename equal to the actual PDF filename.
 
 Files published here are publicly downloadable. PDFs are fetched only when a visitor chooses a download, so their size does not affect the homepage's initial load.
 
