@@ -13,6 +13,10 @@
   margin-bottom: 24px;
 }
 
+.materials-intro p + p {
+  margin-top: 12px;
+}
+
 .materials-group + .materials-group {
   margin-top: 32px;
   padding-top: 24px;
