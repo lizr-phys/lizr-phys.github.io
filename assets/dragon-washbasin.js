@@ -24,11 +24,14 @@
   const particles = Array.from({ length: 40 }, (_, index) => {
     const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     const row = Math.floor(index / 8);
-    dot.setAttribute("cx", (125 + (index % 8) * 4.1 + (row % 2) * 0.5).toFixed(2));
-    dot.setAttribute("cy", (81 + row * 4.5).toFixed(2));
+    const column = index % 8;
+    dot.setAttribute("cx", (125 + column * 4.1 + (row % 2) * 0.5).toFixed(2));
+    const y = 81 + row * 4.5;
+    dot.setAttribute("cy", y.toFixed(2));
     dot.setAttribute("r", "0.65");
+    dot.setAttribute("fill-opacity", "0.8");
     particleGroup.append(dot);
-    return { dot, rank: ((index * 13) % 40) / 40 };
+    return { dot, y, rank: ((column * 3) % 8 + ((row * 2) % 5) / 5) / 8 };
   });
   const samples = Array.from({ length: 120 }, (_, index) => {
     const theta = index * 2 * Math.PI / 120;
@@ -164,9 +167,10 @@
       element.setAttribute("height", height.toFixed(2));
     });
     const occupancy = relativeDensity / 1.5;
-    particles.forEach(({ dot, rank }) => {
-      const fade = Math.max(0, Math.min(1, (occupancy - rank) / 0.16));
-      dot.setAttribute("opacity", (0.78 * fade * fade * (3 - 2 * fade)).toFixed(3));
+    particles.forEach(({ dot, y, rank }) => {
+      // Equal-size, equal-opacity dots; never leave half a dot at the surface.
+      const submerged = y - 0.65 >= 101 - height && y + 0.65 <= 101;
+      dot.setAttribute("visibility", submerged && rank < occupancy ? "visible" : "hidden");
     });
     waterLevel.setAttribute("fill-opacity", (0.14 + relativeDensity * 0.12).toFixed(2));
     depth.setAttribute("aria-valuetext", level < 0.34 ? "Shallow water; less added mass; faster vibration" : level < 0.67 ? "Moderate water depth and added mass" : "Deep water; more added mass; slower vibration");
