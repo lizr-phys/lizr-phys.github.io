@@ -1,0 +1,271 @@
+.washbasin-demo {
+  --basin-green: #32675d;
+  --basin-bronze: #846039;
+  width: 100%;
+  max-width: 720px;
+  margin-top: 12px;
+  padding: 8px 0;
+  border-block: 1px solid var(--rule);
+  display: grid;
+  gap: 4px;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.washbasin-visuals {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.washbasin-demo .washbasin-photo {
+  width: 100%;
+  max-width: 200px;
+  margin: 0;
+  justify-self: center;
+}
+
+.washbasin-photo-crop {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.washbasin-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 44%;
+}
+
+.washbasin-photo figcaption,
+.washbasin-schematic {
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 18px;
+  text-align: center;
+}
+
+.washbasin-link {
+  width: 20px;
+  height: 12px;
+  fill: none;
+  stroke: var(--basin-bronze);
+  stroke-width: 1.2;
+}
+
+.washbasin-model {
+  min-width: 0;
+}
+
+.washbasin-canvas {
+  position: relative;
+  width: 270px;
+  max-width: 100%;
+  aspect-ratio: 190 / 148;
+  margin-inline: auto;
+}
+
+.washbasin-mode {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.washbasin-water {
+  fill: var(--basin-green);
+}
+
+.washbasin-reference {
+  fill: none;
+  stroke: #9baea7;
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.washbasin-wall {
+  fill: none;
+  stroke: var(--basin-green);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.washbasin-displacements {
+  fill: var(--basin-green);
+  stroke: var(--basin-green);
+  stroke-width: 0.9;
+}
+
+.washbasin-displacements line {
+  marker-end: url(#washbasin-vector-head);
+}
+
+#washbasin-vector-head {
+  fill: var(--basin-green);
+}
+
+.washbasin-handle-drawing {
+  fill: none;
+  stroke: var(--basin-bronze);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.washbasin-nodes {
+  fill: #ffffff;
+  stroke: var(--basin-green);
+  stroke-width: 1.6;
+}
+
+.washbasin-model-label {
+  fill: #000000;
+  font-size: 11px;
+}
+
+.washbasin-node-label {
+  fill: var(--muted);
+  font-size: 10px;
+}
+
+.washbasin-schematic {
+  position: absolute;
+  inset: auto 0 0;
+  pointer-events: none;
+}
+
+.washbasin-demo button,
+.washbasin-demo input {
+  font: inherit;
+}
+
+.washbasin-handle {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  transform: translate(-50%, -50%);
+}
+
+.washbasin-handle:hover,
+.washbasin-handle:active {
+  background: rgb(50 103 93 / 7%);
+}
+
+.washbasin-photo-left,
+.washbasin-photo-right {
+  top: 44%;
+  height: 68px;
+}
+
+.washbasin-photo-left { left: 12%; }
+.washbasin-photo-right { left: 88%; }
+.washbasin-model-left { left: 14.74%; top: 47.30%; }
+.washbasin-model-right { left: 85.26%; top: 47.30%; }
+
+.washbasin-water-section { fill: #ffffff; stroke: #9baea7; stroke-width: 0.7; }
+.washbasin-water-level,
+.washbasin-density-particles { fill: var(--basin-green); }
+
+.washbasin-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.washbasin-toggle {
+  min-width: 48px;
+  min-height: 44px;
+  padding: 4px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #000000;
+  cursor: pointer;
+  text-align: right;
+}
+
+.washbasin-toggle:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.washbasin-depth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.washbasin-liquids {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 12px;
+}
+
+.washbasin-liquids > .washbasin-depth-hint {
+  grid-column: 1 / -1;
+  text-align: center;
+  line-height: 16px;
+}
+
+.washbasin-depth input {
+  width: 88px;
+  min-width: 48px;
+  min-height: 44px;
+  margin: 0;
+  accent-color: var(--basin-green);
+  cursor: pointer;
+}
+
+.washbasin-depth-hint {
+  color: var(--basin-green);
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+
+.washbasin-demo .washbasin-intro,
+.washbasin-demo .washbasin-path {
+  margin: 0;
+}
+
+.washbasin-path { color: var(--basin-green); }
+
+.washbasin-demo button:focus-visible,
+.washbasin-demo input:focus-visible {
+  outline: 2px solid var(--basin-green);
+  outline-offset: 2px;
+}
+
+.washbasin-demo button:disabled,
+.washbasin-demo input:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+@media (max-width: 540px) {
+  .washbasin-visuals { grid-template-columns: 1fr; gap: 4px; }
+  .washbasin-link { width: 20px; height: 16px; justify-self: center; transform: rotate(90deg); }
+  .washbasin-controls { column-gap: 8px; }
+  .washbasin-photo-crop { height: 180px; }
+  .washbasin-demo .washbasin-photo { max-width: 180px; }
+  .washbasin-canvas { width: 230px; }
+  .washbasin-liquids { grid-template-columns: 1fr; gap: 0; }
+  .washbasin-depth { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 4px; text-align: left; }
+  .washbasin-depth input { width: 100%; min-width: 0; min-height: 28px; }
+  .washbasin-depth-hint { font-size: 0.72rem; }
+}
+
+@media print {
+  .washbasin-demo { break-inside: avoid; }
+  .washbasin-controls,
+  .washbasin-handle { display: none; }
+  .washbasin-visuals { grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr); }
+  .washbasin-link { transform: none; }
+}

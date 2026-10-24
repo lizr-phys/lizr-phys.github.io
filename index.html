@@ -6,7 +6,11 @@
   <meta name="description" content="Personal homepage of Zhuoran Li, undergraduate student in Physics at Qingdao University.">
   <title>Zhuoran Li</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="style.css?v=20261006-dialog-motion">
+  <link rel="stylesheet" href="style.css?v=20261024-research-draft">
+  <link rel="stylesheet" href="assets/dragon-washbasin.css?v=20261025-v4">
+  <script src="assets/dragon-washbasin.js?v=20261025-v4" defer></script>
+  <link rel="stylesheet" href="assets/llm-ptp.css?v=20261024-v2">
+  <script src="assets/llm-ptp.js?v=20261024-v2" defer></script>
 </head>
 <body id="top">
   <header class="topbar">
@@ -168,16 +172,112 @@
         </div>
 
         <div class="research-block">
-          <h3>Research Directions</h3>
-          <ul>
-            <li>Physics-informed neural networks (PINN) for the Dirac equation.</li>
-            <li>Large language model acceleration and processing-in-memory (PIM) architectures.</li>
-          </ul>
-        </div>
-
-        <div class="research-block">
-          <h3>Publications</h3>
-          <p>Li Zhuoran, Cao Derang, Kong Xinyi, Li Qiang, Sun Shijia. Physical Analysis and Instructional Design of the Dragon Washbasin Experiment from the Perspective of High-School&ndash;University Transition. <span lang="zh-CN">物理实验</span>, under review.</p>
+          <h3>Research Projects and Publications</h3>
+          <article class="research-project entry-content" aria-labelledby="dragon-washbasin-heading">
+            <h4 id="dragon-washbasin-heading">Dragon Washbasin Experiment</h4>
+            <p>Li Zhuoran, Cao Derang, Kong Xinyi, Li Qiang, Sun Shijia. Physical Analysis and Instructional Design of the Dragon Washbasin Experiment from the Perspective of High-School&ndash;University Transition. <span lang="zh-CN">物理实验</span>, under review.</p>
+            <div class="washbasin-demo" id="washbasin-demo" data-motion="static" aria-label="From the dragon washbasin experiment to a vibration model">
+              <div class="washbasin-visuals">
+                <figure class="washbasin-photo">
+                  <div class="washbasin-photo-crop">
+                    <img src="assets/dragon-washbasin.jpeg" alt="A copper-green dragon washbasin with two bronze handles, photographed from above." width="3072" height="4096" loading="lazy" decoding="async">
+                    <button class="washbasin-handle washbasin-photo-left" type="button" data-basin-handle aria-label="Excite the left photographed handle" title="Hover, touch or focus a handle to increase vibration" disabled></button>
+                    <button class="washbasin-handle washbasin-photo-right" type="button" data-basin-handle aria-label="Excite the right photographed handle" title="Hover, touch or focus a handle to increase vibration" disabled></button>
+                  </div>
+                  <figcaption>Experiment</figcaption>
+                </figure>
+                <svg class="washbasin-link" viewBox="0 0 28 16" aria-hidden="true"><path d="M1 8H25M19 2L25 8L19 14"/></svg>
+                <div class="washbasin-model">
+                  <div class="washbasin-canvas">
+                    <svg class="washbasin-mode" viewBox="45 0 190 148" role="img" aria-labelledby="washbasin-mode-title washbasin-mode-desc">
+                      <title id="washbasin-mode-title">Four-node vibration of the basin wall</title>
+                      <desc id="washbasin-mode-desc">The four cardinal nodes stay fixed while four antinodes move radially in alternating directions. The handles sit beside the left and right nodes. Displacement is exaggerated.</desc>
+                      <defs>
+                        <marker id="washbasin-vector-head" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="1.8" markerHeight="1.8" orient="auto-start-reverse"><path d="M0 0L6 3L0 6Z"/></marker>
+                        <clipPath id="washbasin-liquid-clip"><rect data-basin-liquid-clip x="123" y="90" width="34" height="11"/></clipPath>
+                      </defs>
+                      <circle class="washbasin-water" data-basin-water cx="140" cy="70" r="49" fill-opacity="0.08"/>
+                      <circle class="washbasin-reference" cx="140" cy="70" r="55"/>
+                      <path class="washbasin-wall" data-basin-wall d="M195,70 L196.07,62.62 L196.02,54.99 L194.73,47.33 L192.13,39.90 L188.23,32.99 L183.13,26.87 L177.01,21.77 L170.10,17.87 L162.67,15.27 L155.01,13.98 L147.38,13.93 L140,15 L133.02,17.01 L126.54,19.77 L120.58,23.11 L115.10,26.87 L110.05,30.96 L105.35,35.35 L100.96,40.05 L96.87,45.10 L93.11,50.58 L89.77,56.54 L87.01,63.02 L85,70 L83.93,77.38 L83.98,85.01 L85.27,92.67 L87.87,100.10 L91.77,107.01 L96.87,113.13 L102.99,118.23 L109.90,122.13 L117.33,124.73 L124.99,126.02 L132.62,126.07 L140,125 L146.98,122.99 L153.46,120.23 L159.42,116.89 L164.90,113.13 L169.95,109.04 L174.65,104.65 L179.04,99.95 L183.13,94.90 L186.89,89.42 L190.23,83.46 L192.99,76.98Z"/>
+                      <g class="washbasin-displacements" aria-hidden="true">
+                        <g data-basin-displacement="45"><line x1="178.89" y1="31.11" x2="183.13" y2="26.87"/><circle cx="183.13" cy="26.87" r="1.7"/></g>
+                        <g data-basin-displacement="135"><line x1="101.11" y1="31.11" x2="105.35" y2="35.35"/><circle cx="105.35" cy="35.35" r="1.7"/></g>
+                        <g data-basin-displacement="225"><line x1="101.11" y1="108.89" x2="96.87" y2="113.13"/><circle cx="96.87" cy="113.13" r="1.7"/></g>
+                        <g data-basin-displacement="315"><line x1="178.89" y1="108.89" x2="174.65" y2="104.65"/><circle cx="174.65" cy="104.65" r="1.7"/></g>
+                      </g>
+                      <g class="washbasin-handle-drawing" aria-hidden="true"><path d="M85 56C59 51 59 89 85 84"/><path d="M195 56C221 51 221 89 195 84"/></g>
+                      <g class="washbasin-nodes" aria-hidden="true"><circle cx="195" cy="70" r="2.8"/><circle cx="140" cy="15" r="2.8"/><circle cx="85" cy="70" r="2.8"/><circle cx="140" cy="125" r="2.8"/></g>
+                      <text class="washbasin-model-label" x="140" y="54" text-anchor="middle">Basin wall</text>
+                      <text class="washbasin-node-label" x="140" y="67" text-anchor="middle">4 fixed nodes</text>
+                      <rect class="washbasin-water-section" x="121" y="78" width="38" height="25"/>
+                      <rect class="washbasin-water-level" data-basin-level x="123" y="90" width="34" height="11"/>
+                      <g class="washbasin-density-particles" data-basin-particles clip-path="url(#washbasin-liquid-clip)" aria-hidden="true"></g>
+                    </svg>
+                    <button class="washbasin-handle washbasin-model-left" type="button" data-basin-handle aria-label="Excite the left model handle" title="Hover, touch or focus a handle to increase vibration" disabled></button>
+                    <button class="washbasin-handle washbasin-model-right" type="button" data-basin-handle aria-label="Excite the right model handle" title="Hover, touch or focus a handle to increase vibration" disabled></button>
+                    <span class="washbasin-schematic">Schematic &middot; slow motion</span>
+                  </div>
+                </div>
+              </div>
+              <p class="washbasin-intro">I study basin vibrations, turning measurements and theoretical models into physics teaching.</p>
+              <p class="washbasin-path">Observe &rarr; Measure &rarr; Model &rarr; Teach</p>
+              <div class="washbasin-controls">
+                <div class="washbasin-liquids">
+                  <label class="washbasin-depth" for="washbasin-depth"><span>Water depth</span><input id="washbasin-depth" data-basin-depth type="range" min="0" max="100" value="50" aria-label="Water depth" aria-describedby="washbasin-depth-hint" disabled></label>
+                  <label class="washbasin-depth" for="washbasin-density"><span>Water density</span><input id="washbasin-density" data-basin-density type="range" min="0" max="100" value="50" aria-label="Water density" aria-describedby="washbasin-depth-hint" disabled></label>
+                  <span class="washbasin-depth-hint" id="washbasin-depth-hint">Deeper or denser &rarr; slower</span>
+                </div>
+                <button class="washbasin-toggle" type="button" data-basin-toggle disabled>Play</button>
+              </div>
+              <noscript><p class="washbasin-fallback">Enable JavaScript to explore the vibration model.</p></noscript>
+            </div>
+          </article>
+          <article class="research-project entry-content" aria-labelledby="llm-ptp-heading">
+            <h4 id="llm-ptp-heading">LLM-PTP</h4>
+            <p>Large language model inference acceleration with processing-in-memory (PIM) architectures.</p>
+            <div class="ptp-demo" id="llm-ptp-demo" data-mechanism="addressing" data-motion="static" aria-label="LLM-PTP mechanism schematic">
+              <div class="ptp-canvas">
+                <svg class="ptp-wires" viewBox="0 0 700 176" aria-hidden="true">
+                  <defs><marker id="ptp-arrow" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="4" markerHeight="4" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L6 3L0 6Z"/></marker></defs>
+                  <g class="ptp-routes">
+                    <path data-ptp-link="request-in" data-related="gpu atu"/>
+                    <path data-ptp-link="bank0" data-related="atu pim"/><path data-ptp-link="bank1" data-related="atu pim"/><path data-ptp-link="bank2" data-related="atu pim"/><path data-ptp-link="bank3" data-related="atu pim"/>
+                    <path data-ptp-link="gpu-task" data-related="gpu scheduler"/><path data-ptp-link="pim-task" data-related="pim scheduler"/>
+                    <path class="ptp-return" data-ptp-link="gpu-feedback" data-related="gpu scheduler"/><path class="ptp-return" data-ptp-link="pim-feedback" data-related="pim scheduler"/>
+                    <path class="ptp-copy-route" data-ptp-link="copy" data-related="atu pim"/>
+                  </g>
+                  <g class="ptp-packet" data-ptp-request><rect x="-11" y="-7" width="22" height="14" rx="2"/><text text-anchor="middle" y="3.5">A</text></g>
+                  <g class="ptp-packet" data-ptp-request><rect x="-11" y="-7" width="22" height="14" rx="2"/><text text-anchor="middle" y="3.5">A</text></g>
+                  <g class="ptp-packet ptp-operator" data-ptp-task><rect x="-11" y="-7" width="22" height="14" rx="2"/><text text-anchor="middle" y="3.5">op</text></g>
+                  <g class="ptp-packet ptp-operator" data-ptp-task><rect x="-11" y="-7" width="22" height="14" rx="2"/><text text-anchor="middle" y="3.5">op</text></g>
+                  <g class="ptp-packet ptp-operator" data-ptp-task><rect x="-11" y="-7" width="22" height="14" rx="2"/><text text-anchor="middle" y="3.5">op</text></g>
+                  <circle class="ptp-feedback" data-ptp-feedback r="3"/><circle class="ptp-feedback" data-ptp-feedback r="3"/>
+                  <rect class="ptp-copy-block" data-ptp-copy x="-3.5" y="-3.5" width="7" height="7"/><rect class="ptp-copy-block" data-ptp-copy x="-3.5" y="-3.5" width="7" height="7"/>
+                </svg>
+                <button class="ptp-node ptp-gpu" data-ptp-node="gpu" type="button" aria-describedby="ptp-explanation" disabled><strong>GPU</strong><span>Operators</span></button>
+                <div class="ptp-atu" data-ptp-node="atu">
+                  <button class="ptp-node-head" type="button" aria-describedby="ptp-explanation" disabled>SRAM + ATU</button>
+                  <div class="ptp-tables">
+                    <div class="ptp-table" data-ptp-table="0" data-active="true"><span data-ptp-role>Active</span><span data-ptp-map>A &rarr; B1</span></div>
+                    <div class="ptp-table" data-ptp-table="1" data-active="false"><span data-ptp-role>Shadow</span><span data-ptp-map>A &rarr; B3</span></div>
+                  </div>
+                </div>
+                <div class="ptp-memory" data-ptp-node="pim">
+                  <button class="ptp-node-head" type="button" aria-describedby="ptp-explanation" disabled>PIM memory banks</button>
+                  <div class="ptp-banks"><span class="ptp-bank" data-ptp-bank="0">Bank 0</span><span class="ptp-bank" data-ptp-bank="1">Bank 1</span><span class="ptp-bank" data-ptp-bank="2">Bank 2</span><span class="ptp-bank" data-ptp-bank="3">Bank 3</span></div>
+                </div>
+                <button class="ptp-node ptp-scheduler" data-ptp-node="scheduler" type="button" aria-describedby="ptp-explanation" disabled>Scheduler</button>
+              </div>
+              <p class="ptp-explanation" id="ptp-explanation">ATU maps logical requests to banks without GPU-side layout changes.</p>
+              <div class="ptp-controls" role="group" aria-label="Explore LLM-PTP mechanisms">
+                <button class="ptp-choice" type="button" data-ptp-mechanism="addressing" aria-pressed="true" disabled>Transparent addressing</button>
+                <button class="ptp-choice" type="button" data-ptp-mechanism="scheduling" aria-pressed="false" disabled>Adaptive scheduling</button>
+                <button class="ptp-choice" type="button" data-ptp-mechanism="remapping" aria-pressed="false" disabled>Online remapping</button>
+                <button class="ptp-play" type="button" data-ptp-play disabled>Play</button>
+              </div>
+              <noscript><p>Enable JavaScript to explore the mechanisms.</p></noscript>
+            </div>
+          </article>
         </div>
       </section>
 

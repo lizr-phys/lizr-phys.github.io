@@ -402,6 +402,21 @@ ul {
   margin-top: 3px;
 }
 
+.research-project {
+  margin-top: 12px;
+}
+
+.research-project + .research-project {
+  margin-top: 22px;
+}
+
+.research-project h4 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 html:has(.textbook-dialog[open]) {
   overflow: hidden;
 }
