@@ -11,6 +11,8 @@
   <script src="assets/dragon-washbasin.js?v=20261025-v5" defer></script>
   <link rel="stylesheet" href="assets/llm-ptp.css?v=20261024-v2">
   <script src="assets/llm-ptp.js?v=20261024-v2" defer></script>
+  <link rel="stylesheet" href="assets/physlib-formulas.css?v=20261025-v1">
+  <script src="assets/physlib-formulas.js?v=20261025-v1" defer></script>
 </head>
 <body id="top">
   <header class="topbar">
@@ -286,6 +288,7 @@
         <p class="contribution-project">
           <a href="https://physlib.io/" target="_blank" rel="noopener noreferrer">Physlib</a> is an open-source community project for formalizing results from physics in Lean 4. If you are interested in this work or related topics, please feel free to <a href="https://leanprover.zulipchat.com/#user/1204485" target="_blank" rel="noopener noreferrer">contact me</a> on the Lean Zulip.
         </p>
+        <p class="physlib-formula-hint" id="physlib-formula-hint">Hover, focus or tap a formula to view its Lean code.</p>
         <article class="contribution-entry entry-content">
           <h3>
             <a href="https://github.com/leanprover-community/physlib/pull/1627" target="_blank" rel="noopener noreferrer">
@@ -294,6 +297,23 @@
           </h3>
           <p class="contribution-status">Merged PR</p>
           <p>Formalized the Clifford action on Dirac fermions as a real-linear map to complex-linear endomorphisms, together with the associated gamma-matrix identities, chirality operator, and chiral projectors.</p>
+          <div class="physlib-formula-group" data-lean-formulas>
+            <button class="physlib-formula" type="button" data-lean-example="clifford" aria-label="Show Lean code for the Clifford anticommutator" aria-expanded="false" aria-controls="lean-code-dirac" aria-describedby="physlib-formula-hint" disabled>
+              <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><msup><mi>γ</mi><mi>μ</mi></msup><mo separator="true">,</mo><msup><mi>γ</mi><mi>ν</mi></msup><mo stretchy="false">}</mo><mo>=</mo><mn>2</mn><msup><mi>η</mi><mrow><mi>μ</mi><mi>ν</mi></mrow></msup><mi>I</mi></mrow><annotation encoding="application/x-tex">\{\gamma^\mu,\gamma^\nu\}=2\eta^{\mu\nu}I</annotation></semantics></math></span>
+              <span class="physlib-lean-label">Lean</span>
+            </button>
+            <div class="physlib-code-popover" id="lean-code-dirac" hidden>
+              <div class="physlib-code-head"><strong>Lean 4</strong><a data-lean-source href="https://github.com/leanprover-community/physlib/blob/405848179db6375f814021e804a37dc0dda66d91/Physlib/Relativity/Fermions/Dirac/GammaMatrices.lean#L173-L180" target="_blank" rel="noopener noreferrer">#1627 · Source</a><button type="button" data-lean-close aria-label="Close Lean code">Close</button></div>
+              <pre tabindex="0" aria-label="Lean code for the Clifford anticommutator"><code data-lean-code>theorem gamma_anticomm (μ ν : Fin 1 ⊕ Fin 3) :
+    gamma μ * gamma ν + gamma ν * gamma μ =
+      (2 * (minkowskiMatrix μ ν : ℂ)) • (1 : Module.End ℂ Dirac) := by
+  simp only [gamma, smul_mul_assoc, mul_smul_comm, smul_smul]
+  rw [mul_comm (minkowskiMatrix ν ν), ← smul_add, gammaMatrix_anticomm]
+  rw [smul_smul, ← Complex.coe_smul]
+  fin_cases μ &lt;;&gt; fin_cases ν &lt;;&gt;
+    norm_num [minkowskiMatrix.off_diag_zero] &lt;;&gt; simp [minkowskiMatrix.off_diag_zero]</code></pre>
+            </div>
+          </div>
         </article>
         <article class="contribution-entry entry-content">
           <h3>
@@ -303,6 +323,17 @@
           </h3>
           <p class="contribution-status">Merged PR</p>
           <p>Lifted quantum angular momentum components from Schwartz maps to densely defined symmetric operators on Hilbert space. Future work will extend this toward L<sup>2</sup>, self-adjointness, spectral results, ladder operators, and spherical harmonics.</p>
+          <div class="physlib-formula-group" data-lean-formulas>
+            <button class="physlib-formula" type="button" data-lean-example="domain" aria-label="Show Lean code for the dense angular momentum domain" aria-expanded="false" aria-controls="lean-code-domain" aria-describedby="physlib-formula-hint" disabled>
+              <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover class="physlib-closure" accent="true"><mrow><mi mathvariant="normal">Dom</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>L</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false">)</mo></mrow><mo stretchy="true">‾</mo></mover><mo>=</mo><msup><mi>L</mi><mn>2</mn></msup><mo stretchy="false">(</mo><msup><mi>ℝ</mi><mi>d</mi></msup><mo separator="true">;</mo><mi>ℂ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\overline{\operatorname{Dom}(L_{ij})}=L^2(\mathbb{R}^d;\mathbb{C})</annotation></semantics></math></span>
+              <span class="physlib-lean-label">Lean</span>
+            </button>
+            <div class="physlib-code-popover" id="lean-code-domain" hidden>
+              <div class="physlib-code-head"><strong>Lean 4</strong><a data-lean-source href="https://github.com/leanprover-community/physlib/blob/5ad56e24de155462acd8478458292347393d5908/Physlib/QuantumMechanics/Operators/AngularMomentum.lean#L183-L184" target="_blank" rel="noopener noreferrer">#1673 · Source</a><button type="button" data-lean-close aria-label="Close Lean code">Close</button></div>
+              <pre tabindex="0" aria-label="Lean code for the dense angular momentum domain"><code data-lean-code>lemma angularMomentumOperator_hasDenseDomain :
+    (angularMomentumOperator i j).HasDenseDomain := SchwartzSubmodule.dense d _</code></pre>
+            </div>
+          </div>
         </article>
         <article class="contribution-entry entry-content">
           <h3>
@@ -312,6 +343,24 @@
           </h3>
           <p class="contribution-status">Merged PR</p>
           <p>Extended the quantum angular momentum API with the Hilbert-space L<sup>2</sup> operator, three-dimensional angular momentum components and commutation relations, and raising and lowering operators on the common Schwartz domain.</p>
+          <div class="physlib-formula-group" data-lean-formulas>
+            <button class="physlib-formula" type="button" data-lean-example="raising" aria-label="Show Lean code for the raising commutator" aria-expanded="false" aria-controls="lean-code-ladder" aria-describedby="physlib-formula-hint" disabled>
+              <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>L</mi><mi>z</mi></msub><mo separator="true">,</mo><msub><mi>L</mi><mo>+</mo></msub><mo stretchy="false">]</mo><mo>=</mo><mi mathvariant="normal">ℏ</mi><msub><mi>L</mi><mo>+</mo></msub></mrow><annotation encoding="application/x-tex">[L_z,L_+]=\hbar L_+</annotation></semantics></math></span>
+              <span class="physlib-lean-label">Lean</span>
+            </button>
+            <button class="physlib-formula" type="button" data-lean-example="casimir" aria-label="Show Lean code for angular momentum squared and raising" aria-expanded="false" aria-controls="lean-code-ladder" aria-describedby="physlib-formula-hint" disabled>
+              <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msup><mi>L</mi><mn>2</mn></msup><mo separator="true">,</mo><msub><mi>L</mi><mo>+</mo></msub><mo stretchy="false">]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">[L^2,L_+]=0</annotation></semantics></math></span>
+              <span class="physlib-lean-label">Lean</span>
+            </button>
+            <div class="physlib-code-popover" id="lean-code-ladder" hidden>
+              <div class="physlib-code-head"><strong>Lean 4</strong><a data-lean-source href="https://github.com/leanprover-community/physlib/blob/d9a67555d722e4ff82438d9b67a635873145d9ac/Physlib/QuantumMechanics/Operators/AngularMomentum/DimThree.lean#L251-L255" target="_blank" rel="noopener noreferrer">#1679 · Source</a><button type="button" data-lean-close aria-label="Close Lean code">Close</button></div>
+              <pre tabindex="0" aria-label="Lean code for the angular momentum raising commutator"><code data-lean-code>lemma angularMomentumZ_commutation_raising : ⁅𝐋₃ 2, 𝐋⁺⁆ = (ℏ : ℂ) • 𝐋⁺ := by
+  rw [angularMomentumRaisingCLM, lie_add, lie_smul, angularMomentumDimThree_commutation_zx,
+    ← lie_skew (𝐋₃ 2) (𝐋₃ 1), angularMomentumDimThree_commutation_yz]
+  simp only [smul_neg, smul_smul, ← mul_assoc, I_mul_I, neg_one_mul]
+  module</code></pre>
+            </div>
+          </div>
         </article>
       </section>
 
