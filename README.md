@@ -14,6 +14,9 @@ https://lizr-phys.github.io
 lizr-phys.github.io/
 |-- index.html
 |-- style.css
+|-- resources/
+|   |-- index.html
+|   `-- resources.css
 |-- materials/
 |   |-- index.html
 |   |-- materials.css
@@ -23,6 +26,8 @@ lizr-phys.github.io/
 |-- blog/
 |   |-- index.html
 |   |-- blog.css
+|   |-- before-the-proof/
+|   |   `-- index.html
 |   `-- about-this-blog/
 |       `-- index.html
 |-- assets/
@@ -30,11 +35,11 @@ lizr-phys.github.io/
 |   |-- qingdao-university-logo.jpg
 |   |-- tal-education-logo.png
 |   |-- uestc-logo.webp
-|   `-- resume.pdf
+|   `-- Zhuoran_Li.pdf
 `-- README.md
 ```
 
-The CV PDF is stored at `assets/resume.pdf`.
+The CV PDF is stored at `assets/Zhuoran_Li.pdf`.
 
 ## Update Personal Information
 
@@ -47,10 +52,10 @@ Do not add unverified positions, awards, publications, DOI links, arXiv links, o
 Place the real PDF file at:
 
 ```text
-assets/resume.pdf
+assets/Zhuoran_Li.pdf
 ```
 
-The "Download CV" link in `index.html` already points to that file.
+The "Download CV" links on the homepage, blog pages, and resources page all point to that file.
 
 ## Update Links
 
@@ -58,15 +63,26 @@ Edit the profile links in the `<aside>` element of `index.html` to update Email,
 
 The blog is part of the same GitHub Pages site at `/blog/`. Edit `blog/index.html` to update the post list and add each article in its own folder under `blog/`.
 
+Browser tab titles match their page paths or a title keyword:
+
+| Browser tab title | Page path |
+| --- | --- |
+| Blog | `/blog/` |
+| Before the Proof | `/blog/before-the-proof/` |
+| About This Blog | `/blog/about-this-blog/` |
+| Resources | `/resources/` |
+
 ## Recommended Learning Resources
 
-The academic motto opens a short question before navigating to the learning resources page at `/materials/`. On smaller screens, the same entry appears below the profile information. Press Enter or select Continue to submit; Cancel, Escape, or clicking outside closes the dialog.
+The academic motto opens a short question before navigating to the learning resources page at `/resources/`. On smaller screens, the same entry appears below the profile information. Press Enter or select Continue to submit; Cancel, Escape, or clicking outside closes the dialog.
 
-Edit the question and accepted names in `index.html`. The small validation script is included in the homepage to avoid a separate script request. Answers are matched locally without a network request, ignoring case, whitespace, and common name punctuation. The signature uses a native dialog button; if JavaScript is disabled, the dialog explains how to enable verification and Continue stays disabled. The question is an entry interaction, not access control: the source, the materials page, and direct PDF links remain public on GitHub Pages.
+The legacy `/materials/` page redirects to `/resources/`, preserving its query string and fragment. The page source and styles are now `resources/index.html` and `resources/resources.css`; the old `materials/materials.css` URL imports the current styles for cached pages.
+
+Edit the question and accepted names in `index.html`. The small validation script is included in the homepage to avoid a separate script request. Answers are matched locally without a network request, ignoring case, whitespace, and common name punctuation. The signature uses a native dialog button; if JavaScript is disabled, the dialog explains how to enable verification and Continue stays disabled. The question is an entry interaction, not access control: the source, the resources page, and direct PDF links remain public on GitHub Pages.
 
 `materials/access.js` is retained for compatibility with previously cached homepage HTML; the current homepage does not load it.
 
-The page organizes resources by course. Add entries in the `courses` group of `materials/index.html`, including verified links to video lectures, lecture notes, exercises, and recommended English textbooks. These English textbooks are personal recommendations for more detailed self-study, not prescribed references for the video courses. Chinese-language textbooks and notes accompany the Chinese-language lectures.
+The page organizes resources by course. Add entries in the `courses` group of `resources/index.html`, including verified links to video lectures, lecture notes, exercises, and recommended English textbooks. These English textbooks are personal recommendations for more detailed self-study, not prescribed references for the video courses. Chinese-language textbooks and notes accompany the Chinese-language lectures.
 
 David Tong's theoretical physics collection appears immediately before John Watrous's quantum information course, with a personal recommendation and all 23 courses currently listed on his teaching page. The resource list has no separate visible Courses heading.
 
@@ -78,7 +94,7 @@ Group Theory links to the Chinese-language video course based on Qizhi Han and H
 
 Theoretical Mechanics lists Yanbai Zhou's A Course in Theoretical Mechanics (5th edition); Mathematical Methods in Physics provides Kunmiao Liang's textbook (5th edition) as a PDF; Thermodynamics and Statistical Physics lists Zhicheng Wang's textbook (6th edition). The theoretical mechanics and thermodynamics course reference textbooks have no download links. Quantum Mechanics explains that the main video course is independent of any prescribed textbook and does not cover all of advanced quantum mechanics. Its plain-text book entries include Quantum Mechanics, Volumes I and II by Jinyan Zeng (5th edition); the user's own A Course in Quantum Mechanics by Jinyan Zeng (3rd edition) and Advanced Quantum Mechanics by Xinglin Ka (2nd edition); and A Course in Quantum Mechanics by Shixun Zhou (3rd edition). It retains the independently recommended English textbook and the existing problem-book downloads.
 
-Place resource PDFs in `materials/files/`, using the English resource title with a `.pdf` extension as the filename. Replace title colons with ` - ` in filenames. Textbook filenames use the book title; lecture notes, summaries, and workbooks identify the resource type or topic. Keep the supplied PDF contents unchanged. Edit `materials/index.html` to update the verified author, edition, and download link under the corresponding course. Encode spaces in link URLs as `%20` and keep the `download` filename equal to the actual PDF filename.
+Place resource PDFs in `materials/files/`, using the English resource title with a `.pdf` extension as the filename. This download location is retained so existing PDF links keep working. Replace title colons with ` - ` in filenames. Textbook filenames use the book title; lecture notes, summaries, and workbooks identify the resource type or topic. Keep the supplied PDF contents unchanged. Edit `resources/index.html` to update the verified author, edition, and download link under the corresponding course, using `../materials/files/` for local PDFs. Encode spaces in link URLs as `%20` and keep the `download` filename equal to the actual PDF filename.
 
 Files published here are publicly downloadable. PDFs are fetched only when a visitor chooses a download, so their size does not affect the homepage's initial load.
 
