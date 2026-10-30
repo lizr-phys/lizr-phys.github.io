@@ -11,6 +11,8 @@
   <script src="assets/dragon-washbasin.js?v=20261025-v5" defer></script>
   <link rel="stylesheet" href="assets/llm-ptp.css?v=20261030-underline">
   <script src="assets/llm-ptp.js?v=20261024-v2" defer></script>
+  <link rel="stylesheet" href="assets/physlib-lean.css?v=20261030-cauchy">
+  <script src="assets/physlib-lean.js?v=20261030-cauchy" defer></script>
 </head>
 <body id="top">
   <header class="topbar">
@@ -288,8 +290,53 @@
       <section id="contributions" aria-labelledby="contributions-heading">
         <h2 id="contributions-heading">Contributions to Physlib</h2>
         <p class="contribution-project">
-          <a href="https://physlib.io/" target="_blank" rel="noopener noreferrer">Physlib</a> is an open-source community project for formalizing results from physics in Lean 4. If you are interested in this work or related topics, please feel free to <a href="https://leanprover.zulipchat.com/#user/1204485" target="_blank" rel="noopener noreferrer">contact me</a> on the Lean Zulip.
+          <a href="https://physlib.io/" target="_blank" rel="noopener noreferrer">Physlib</a> is an open-source community project for formalizing results from physics in Lean 4. The examples below show Lean 4 checking mathematical proofs; my contributions apply the same approach to physics. If you are interested in this work or related topics, please feel free to <a href="https://leanprover.zulipchat.com/#user/1204485" target="_blank" rel="noopener noreferrer">contact me</a> on the Lean Zulip.
         </p>
+        <div class="lean-demo" id="physlib-lean-demo" data-example="sqrt" data-step="0" data-motion="static" role="group" aria-label="Lean proof walkthroughs" aria-describedby="lean-replay-note">
+          <div class="lean-heading">
+            <div class="lean-examples" role="tablist" aria-label="Choose a Lean proof">
+              <button type="button" role="tab" id="lean-tab-sqrt" data-lean-example="sqrt" aria-selected="true" aria-controls="lean-proof-panel" disabled>√2 is irrational</button>
+              <button type="button" role="tab" id="lean-tab-cauchy" data-lean-example="cauchy" aria-selected="false" aria-controls="lean-proof-panel" tabindex="-1" disabled>Cauchy–Schwarz (2D)</button>
+            </div>
+            <select class="lean-example-select" data-lean-select aria-label="Choose a Lean proof" aria-controls="lean-proof-panel" disabled>
+              <option value="sqrt">√2 is irrational</option>
+              <option value="cauchy">Cauchy–Schwarz (2D)</option>
+            </select>
+            <span data-lean-library>Lean 4 / Mathlib</span>
+          </div>
+          <div class="lean-workspace" id="lean-proof-panel" role="tabpanel" aria-labelledby="lean-tab-sqrt">
+            <pre class="lean-source" tabindex="0" aria-label="Complete Lean proof; scroll to read all lines"><code><span class="lean-line" data-line="1"><span class="lean-keyword">import</span> Mathlib.NumberTheory.Real.Irrational</span>
+<span class="lean-line" data-line="2"></span>
+<span class="lean-line" data-line="3"><span class="lean-keyword">theorem</span> sqrt_two_irrational :</span>
+<span class="lean-line is-current" data-line="4" data-lean-line="0">    Irrational (Real.sqrt 2) := <span class="lean-keyword">by</span></span>
+<span class="lean-line" data-line="5" data-lean-line="1">  <span class="lean-keyword">apply</span> irrational_sqrt_natCast_iff.mpr</span>
+<span class="lean-line" data-line="6" data-lean-line="2">  <span class="lean-keyword">have</span> hprime : Nat.Prime 2 := Nat.prime_two</span>
+<span class="lean-line" data-line="7" data-lean-line="3">  <span class="lean-keyword">exact</span> hprime.not_isSquare</span></code></pre>
+            <div class="lean-state" role="status" aria-live="polite" aria-atomic="true">
+              <div class="lean-goal-heading"><span data-lean-status>Recorded goal</span><svg class="lean-check" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9L7 13L15 4"/></svg></div>
+              <pre class="lean-goal" data-lean-goal>⊢ Irrational √2</pre>
+              <p class="lean-explanation" data-lean-explanation>The claim: the square root of 2 cannot be written as a ratio of integers.</p>
+            </div>
+          </div>
+          <div class="lean-controls">
+            <button type="button" data-lean-play aria-pressed="false" disabled>Play</button>
+            <button type="button" data-lean-next disabled>Next step</button>
+            <button type="button" data-lean-reset disabled>Reset</button>
+            <span class="lean-step-count" data-lean-count>0 / 3 steps</span>
+          </div>
+          <div class="lean-footnote">
+            <p id="lean-replay-note">Guided replay · no in-page Lean compiler.</p>
+            <details class="lean-verification">
+              <summary>Code &amp; verification</summary>
+              <div>
+                <p data-lean-context>This Mathlib example illustrates the proof-checking approach that Physlib applies to physics. These examples reuse library results and are separate from my contributions listed below.</p>
+                <p>The complete proofs were compiled locally with Lean 4.33.0 and <a href="https://github.com/leanprover-community/mathlib4/tree/db584cd6d46c92f209a44c0f1c829460d327499d" target="_blank" rel="noopener noreferrer">Mathlib db584cd</a>. Playback replays recorded goals; it does not run Lean.</p>
+                <p><a href="assets/sqrt-two.lean" download="sqrt-two.lean" data-lean-download>Download Lean source</a> · <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/Real/Irrational.html#irrational_sqrt_natCast_iff" target="_blank" rel="noopener noreferrer" data-lean-reference>Mathlib theorem</a></p>
+              </div>
+            </details>
+          </div>
+          <noscript><p class="lean-fallback">The √2 proof is shown above. Enable JavaScript to switch examples and replay recorded goals. The <a href="assets/cauchy-schwarz.lean" download>Cauchy–Schwarz source</a> is also available.</p></noscript>
+        </div>
         <article class="contribution-entry entry-content">
           <h3>
             <a href="https://github.com/leanprover-community/physlib/pull/1627" target="_blank" rel="noopener noreferrer">
