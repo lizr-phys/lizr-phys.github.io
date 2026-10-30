@@ -57,9 +57,9 @@
 
 .ptp-demo .ptp-explanation { min-height: 18px; margin: 0; }
 .ptp-controls { display: flex; align-items: center; gap: 12px; margin: 0; }
-.ptp-choice, .ptp-play { min-height: 44px; padding: 4px 0; border: 0; border-bottom: 1px solid transparent; border-radius: 0; background: transparent; text-align: left; }
-.ptp-choice[aria-pressed="true"] { color: var(--ptp-blue); border-bottom-color: var(--ptp-blue); }
-.ptp-choice:hover, .ptp-play:hover { text-decoration: underline; text-underline-offset: 4px; }
+.ptp-choice, .ptp-play { min-height: 44px; padding: 4px 0; border: 0; border-bottom: 1px solid transparent; border-radius: 0; background: transparent; text-align: left; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.ptp-choice[aria-pressed="true"] { color: var(--ptp-blue); text-decoration-line: underline; }
+.ptp-choice:hover, .ptp-play:hover { text-decoration-line: underline; }
 .ptp-play { min-width: 48px; margin-left: auto; text-align: right; }
 .ptp-demo button:focus-visible { outline: 2px solid var(--ptp-blue); outline-offset: 2px; }
 .ptp-demo button:disabled { cursor: default; }
