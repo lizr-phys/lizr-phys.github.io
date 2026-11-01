@@ -28,6 +28,10 @@ lizr-phys.github.io/
 |   |-- blog.css
 |   |-- before-the-proof/
 |   |   `-- index.html
+|   |-- quantum-mechanics-from-wavefunctions-to-symmetries/
+|   |   |-- index.html
+|   |   |-- article.css
+|   |   `-- article.md
 |   `-- about-this-blog/
 |       `-- index.html
 |-- assets/
@@ -35,6 +39,8 @@ lizr-phys.github.io/
 |   |-- qingdao-university-logo.jpg
 |   |-- tal-education-logo.png
 |   |-- uestc-logo.webp
+|   |-- vendor/
+|   |   `-- katex-0.19.1/
 |   `-- Zhuoran_Li.pdf
 `-- README.md
 ```
@@ -70,7 +76,10 @@ Browser tab titles match their page paths or a title keyword:
 | Blog | `/blog/` |
 | Before the Proof | `/blog/before-the-proof/` |
 | About This Blog | `/blog/about-this-blog/` |
+| Quantum Mechanics: From Wavefunctions to Symmetries | `/blog/quantum-mechanics-from-wavefunctions-to-symmetries/` |
 | Resources | `/resources/` |
+
+The quantum mechanics article keeps its original Markdown in `article.md`. Its equations are pre-rendered with [KaTeX 0.19.1](https://katex.org/docs/api.html) as HTML and accessible MathML. The page loads the bundled styles and fonts from `assets/vendor/katex-0.19.1/`, with the upstream MIT license retained there; it does not load a JavaScript math engine or use a CDN. Long display equations scroll within their own area on narrow screens. The published HTML is complete, so reading or hosting the site still needs no build step.
 
 ## Recommended Learning Resources
 

@@ -1,0 +1,91 @@
+.quantum-article .article-subtitle {
+  margin: 12px 0 8px;
+}
+
+.quantum-article .post-content {
+  max-width: 65ch;
+  line-height: 1.65;
+}
+
+.quantum-article .post-content h3 {
+  margin: 32px 0 12px;
+  font-size: 1.18rem;
+  line-height: 1.4;
+}
+
+.quantum-article .post-content h3:first-child {
+  margin-top: 0;
+}
+
+.quantum-article .post-content h4 {
+  margin: 26px 0 12px;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.quantum-article .post-content h3,
+.quantum-article .post-content h4 {
+  scroll-margin-top: 92px;
+  break-after: avoid;
+}
+
+.quantum-article .equation {
+  max-width: 100%;
+  margin: 22px 0;
+  padding: 8px 2px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  break-inside: avoid;
+}
+
+.quantum-article .equation:focus-visible {
+  outline: 1px solid #000000;
+  outline-offset: 3px;
+}
+
+.quantum-article .katex {
+  font-size: 1.08em;
+}
+
+.quantum-article .katex-display {
+  margin: 0;
+}
+
+.quantum-article .katex-display > .katex {
+  width: max-content;
+  min-width: 100%;
+}
+
+.quantum-article .post-content hr {
+  margin: 32px 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.quantum-article .post-content ol {
+  padding-left: 1.4rem;
+}
+
+.quantum-article .post-content li + li {
+  margin-top: 12px;
+}
+
+@media print {
+  .quantum-article {
+    break-inside: auto;
+  }
+
+  .quantum-article .post-content {
+    max-width: none;
+  }
+
+  .quantum-article .post-content p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .quantum-article .equation {
+    padding: 5px 0;
+    overflow: visible;
+  }
+}
