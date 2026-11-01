@@ -35,7 +35,7 @@ lizr-phys.github.io/
 |   `-- about-this-blog/
 |       `-- index.html
 |-- assets/
-|   |-- avatar.jpg
+|   |-- avatar.png
 |   |-- qingdao-university-logo.jpg
 |   |-- tal-education-logo.png
 |   |-- uestc-logo.webp
