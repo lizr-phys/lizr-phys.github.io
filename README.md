@@ -39,13 +39,10 @@ lizr-phys.github.io/
 |   |-- qingdao-university-logo.jpg
 |   |-- tal-education-logo.png
 |   |-- uestc-logo.webp
-|   |-- vendor/
-|   |   `-- katex-0.19.1/
-|   `-- Zhuoran_Li.pdf
+|   `-- vendor/
+|       `-- katex-0.19.1/
 `-- README.md
 ```
-
-The CV PDF is stored at `assets/Zhuoran_Li.pdf`.
 
 ## Update Personal Information
 
@@ -53,19 +50,9 @@ Edit `index.html` to update the name, email address, university, education detai
 
 Do not add unverified positions, awards, publications, DOI links, arXiv links, or dates.
 
-## Replace the CV
-
-Place the real PDF file at:
-
-```text
-assets/Zhuoran_Li.pdf
-```
-
-The "Download CV" links on the homepage, blog pages, and resources page all point to that file.
-
 ## Update Links
 
-Edit the profile links in the `<aside>` element of `index.html` to update Email, GitHub, Blog, CV, or other links.
+Edit the profile links in the `<aside>` element of `index.html` to update Email, GitHub, Blog, or other links.
 
 The blog is part of the same GitHub Pages site at `/blog/`. Edit `blog/index.html` to update the post list and add each article in its own folder under `blog/`.
 
