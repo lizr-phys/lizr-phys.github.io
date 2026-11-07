@@ -1,7 +1,3 @@
-.quantum-article .article-subtitle {
-  margin: 12px 0 8px;
-}
-
 .quantum-article .post-content {
   max-width: 65ch;
   line-height: 1.65;
@@ -32,15 +28,16 @@
 .quantum-article .equation {
   max-width: 100%;
   margin: 22px 0;
-  padding: 8px 2px;
+  padding: 8px 2px 7px;
+  border-bottom: 1px solid transparent;
   overflow-x: auto;
   overflow-y: hidden;
   break-inside: avoid;
 }
 
 .quantum-article .equation:focus-visible {
-  outline: 1px solid #000000;
-  outline-offset: 3px;
+  outline: none;
+  border-bottom-color: currentColor;
 }
 
 .quantum-article .katex {
@@ -86,6 +83,7 @@
 
   .quantum-article .equation {
     padding: 5px 0;
+    border-bottom: 0;
     overflow: visible;
   }
 }

@@ -67,6 +67,10 @@
   font-size: 0.9rem;
 }
 
+.article-subtitle {
+  margin: 12px 0 8px;
+}
+
 .article-date {
   margin: 0;
 }

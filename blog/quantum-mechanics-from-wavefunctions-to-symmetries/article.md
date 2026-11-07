@@ -70,7 +70,7 @@ $$
 which gives
 
 $$
-\boxed{\Delta x\,\Delta p\geq\frac{\hbar}{2}}.
+\Delta x\,\Delta p\geq\frac{\hbar}{2}.
 $$
 
 The uncertainty principle is not merely a statement about imperfect measuring instruments. It expresses a constraint on the statistical distributions associated with quantum states, arising directly from the operator structure of the theory.
