@@ -26,11 +26,14 @@ lizr-phys.github.io/
 |-- blog/
 |   |-- index.html
 |   |-- blog.css
+|   |-- math-article.css
 |   |-- before-the-proof/
 |   |   `-- index.html
 |   |-- quantum-mechanics-from-wavefunctions-to-symmetries/
 |   |   |-- index.html
-|   |   |-- article.css
+|   |   `-- article.md
+|   |-- thermodynamics-from-heat-to-equilibrium/
+|   |   |-- index.html
 |   |   `-- article.md
 |   `-- about-this-blog/
 |       `-- index.html
@@ -64,9 +67,10 @@ Browser tab titles match their page paths or a title keyword:
 | Before the Proof | `/blog/before-the-proof/` |
 | About This Blog | `/blog/about-this-blog/` |
 | Quantum Mechanics: From Wavefunctions to Symmetries | `/blog/quantum-mechanics-from-wavefunctions-to-symmetries/` |
+| Thermodynamics: From Heat to Equilibrium | `/blog/thermodynamics-from-heat-to-equilibrium/` |
 | Resources | `/resources/` |
 
-The quantum mechanics article keeps its original Markdown in `article.md`. Its equations are pre-rendered with [KaTeX 0.19.1](https://katex.org/docs/api.html) as HTML and accessible MathML. The page loads the bundled styles and fonts from `assets/vendor/katex-0.19.1/`, with the upstream MIT license retained there; it does not load a JavaScript math engine or use a CDN. Long display equations scroll within their own area on narrow screens. The published HTML is complete, so reading or hosting the site still needs no build step.
+The quantum mechanics and thermodynamics articles keep their editable Markdown in `article.md`. Their equations are pre-rendered as HTML and accessible MathML with [KaTeX 0.19.1](https://katex.org/docs/api.html). Both pages load `blog/math-article.css` and the bundled KaTeX styles and fonts from `assets/vendor/katex-0.19.1/`, which includes the upstream MIT license. Long display equations scroll within their own area on narrow screens. The published HTML is ready to serve as static files.
 
 ## Recommended Learning Resources
 
