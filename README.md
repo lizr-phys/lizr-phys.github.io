@@ -42,6 +42,7 @@ lizr-phys.github.io/
 |   |-- qingdao-university-logo.jpg
 |   |-- tal-education-logo.png
 |   |-- uestc-logo.webp
+|   |-- Zhuoran_Li.pdf
 |   `-- vendor/
 |       `-- katex-0.19.1/
 `-- README.md
@@ -53,9 +54,13 @@ Edit `index.html` to update the name, email address, university, education detai
 
 Do not add unverified positions, awards, publications, DOI links, arXiv links, or dates.
 
+## Replace the CV
+
+Replace `assets/Zhuoran_Li.pdf` to update the PDF linked from the homepage, blog, and resources page.
+
 ## Update Links
 
-Edit the profile links in the `<aside>` element of `index.html` to update Email, GitHub, Blog, or other links.
+Edit the profile links in the `<aside>` element of `index.html` to update Email, GitHub, Blog, CV, or other links.
 
 The blog is part of the same GitHub Pages site at `/blog/`. Edit `blog/index.html` to update the post list and add each article in its own folder under `blog/`.
 
