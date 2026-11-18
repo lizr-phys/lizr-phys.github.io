@@ -7,7 +7,6 @@
     root.dataset.theme = isDark ? "dark" : "light";
     if (toggle) {
       toggle.setAttribute("aria-pressed", String(isDark));
-      toggle.title = isDark ? "Switch to light mode" : "Switch to dark mode";
     }
   }
 
