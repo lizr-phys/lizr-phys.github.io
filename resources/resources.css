@@ -21,7 +21,7 @@
 .materials-group + .materials-group {
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid #000000;
+  border-top: 1px solid var(--divider, #000000);
 }
 
 .materials-group > h3 {
@@ -43,7 +43,7 @@
 .materials-entry + .materials-entry {
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid #000000;
+  border-top: 1px solid var(--divider, #000000);
 }
 
 .resource-block {
@@ -68,7 +68,7 @@
   .materials-nav .nav-links {
     width: auto;
     justify-content: flex-end;
-    gap: 24px;
+    gap: clamp(8px, 3vw, 24px);
   }
 }
 

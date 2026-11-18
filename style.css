@@ -1,15 +1,35 @@
 :root {
   color-scheme: light;
-  background: #ffffff;
-  color: #000000;
+  background: var(--page-bg);
+  color: var(--text);
   font-family: Georgia, "Times New Roman", Times, serif;
   font-synthesis: none;
   --page-width: 1080px;
   --sidebar-width: 205px;
   --logo-size: 78px;
   --subheading-size: 1.1rem;
+  --page-bg: #ffffff;
+  --text: #000000;
+  --divider: #000000;
   --rule: #cfcfcf;
   --muted: #4a4a4a;
+  --portrait-bg: var(--page-bg);
+  --dialog-bg: var(--page-bg);
+  --backdrop: rgb(0 0 0 / 16%);
+}
+
+@media screen {
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page-bg: #191918;
+    --text: #eeece7;
+    --divider: #746f64;
+    --rule: #494842;
+    --muted: #b7b3aa;
+    --portrait-bg: #30302c;
+    --dialog-bg: #252421;
+    --backdrop: rgb(0 0 0 / 64%);
+  }
 }
 
 * {
@@ -20,29 +40,21 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
   scrollbar-gutter: stable;
-  background: #ffffff;
-  color: #000000;
   font-size: 16px;
 }
 
 body {
   margin: 0;
-  background: #ffffff;
-  color: #000000;
   line-height: 1.6;
 }
 
 a,
 .textbook-dialog button {
-  color: #000000;
+  color: var(--text);
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   transition: text-underline-offset 160ms ease;
-}
-
-a:visited {
-  color: #000000;
 }
 
 a:hover,
@@ -51,7 +63,7 @@ a:hover,
 }
 
 a:focus-visible {
-  outline: 1px solid #000000;
+  outline: 1px solid currentColor;
   outline-offset: 4px;
 }
 
@@ -59,8 +71,8 @@ a:focus-visible {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: #ffffff;
-  border-bottom: 1px solid #000000;
+  background: var(--page-bg);
+  border-bottom: 1px solid var(--divider);
 }
 
 .section-nav {
@@ -71,7 +83,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: clamp(12px, 2vw, 24px);
 }
 
 .nav-identity {
@@ -129,7 +141,7 @@ a:focus-visible {
 
 .nav-motto:focus-visible,
 .profile-motto:focus-visible {
-  outline: 1px solid #000000;
+  outline: 1px solid currentColor;
   outline-offset: 4px;
 }
 
@@ -137,10 +149,11 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: clamp(20px, 3vw, 40px);
+  gap: clamp(16px, 2.25vw, 32px);
+  margin-inline-start: auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .nav-motto {
     display: none;
   }
@@ -159,6 +172,51 @@ a:focus-visible {
 .nav-links a:hover,
 .nav-links a:focus-visible {
   text-decoration: underline;
+}
+
+.theme-toggle {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.theme-toggle:not([hidden]) {
+  display: grid;
+  place-items: center;
+}
+
+.theme-toggle::before {
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.6 15.7A9 9 0 0 1 8.3 3.4a9 9 0 1 0 12.3 12.3Z' fill='none' stroke='black' stroke-width='1.7' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  content: "";
+}
+
+.theme-toggle[aria-pressed="true"]::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4'/%3E%3C/svg%3E");
+}
+
+.theme-toggle:hover {
+  border-color: var(--divider);
+}
+
+.theme-toggle:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (forced-colors: active) {
+  .theme-toggle::before {
+    forced-color-adjust: none;
+    background: ButtonText;
+  }
 }
 
 .site-shell {
@@ -190,8 +248,8 @@ a:focus-visible {
   margin: 0 auto;
   aspect-ratio: 1;
   object-fit: contain;
-  background: #ffffff;
-  border: 1px solid #000000;
+  background: var(--portrait-bg);
+  border: 1px solid var(--divider);
   filter: none;
   transition: transform 220ms ease;
 }
@@ -220,7 +278,7 @@ a:focus-visible {
 .profile-links {
   margin: 12px 0 0;
   padding-top: 8px;
-  border-top: 1px solid #000000;
+  border-top: 1px solid var(--divider);
   font-size: 0.85rem;
 }
 
@@ -254,18 +312,11 @@ section {
   scroll-margin-top: 92px;
   margin: 0 0 40px;
   padding: 0 0 40px;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid var(--divider);
 }
 
 section:last-of-type {
   margin-bottom: 28px;
-}
-
-h2,
-h3,
-p,
-ul {
-  color: #000000;
 }
 
 h2 {
@@ -283,7 +334,7 @@ h2::after {
   bottom: 0;
   width: 48px;
   height: 2px;
-  background: #000000;
+  background: currentColor;
   content: "";
 }
 
@@ -374,6 +425,20 @@ ul {
   height: 72px;
 }
 
+@media screen {
+  :root[data-theme="dark"] .qdu-logo {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: left;
+  }
+
+  :root[data-theme="dark"] .uestc-logo {
+    border-radius: 50%;
+    background: var(--text);
+  }
+}
+
 .entry-content p + p {
   margin-top: 4px;
 }
@@ -426,13 +491,13 @@ html:has(.textbook-dialog[open]) {
   max-height: calc(100dvh - 40px);
   margin: auto;
   padding: 0;
-  border: 1px solid #000000;
-  background: #ffffff;
-  color: #000000;
+  border: 1px solid var(--divider);
+  background: var(--dialog-bg);
+  color: var(--text);
 }
 
 .textbook-dialog::backdrop {
-  background: rgb(0 0 0 / 16%);
+  background: var(--backdrop);
 }
 
 .textbook-dialog form {
@@ -453,10 +518,10 @@ html:has(.textbook-dialog[open]) {
   width: 100%;
   min-width: 0;
   padding: 8px 10px;
-  border: 1px solid #000000;
+  border: 1px solid var(--divider);
   border-radius: 0;
-  background: #ffffff;
-  color: #000000;
+  background: var(--page-bg);
+  color: var(--text);
   font: inherit;
   font-size: max(1rem, 16px);
 }
@@ -478,9 +543,8 @@ html:has(.textbook-dialog[open]) {
 .textbook-dialog button {
   min-height: 44px;
   padding: 8px 14px;
-  border: 1px solid #000000;
-  background: #ffffff;
-  color: #000000;
+  border: 1px solid var(--divider);
+  background: var(--dialog-bg);
   font: inherit;
   text-decoration-line: none;
   cursor: pointer;
@@ -501,7 +565,7 @@ html:has(.textbook-dialog[open]) {
 
 .textbook-dialog input:focus-visible,
 .textbook-dialog button:focus-visible {
-  outline: 1px solid #000000;
+  outline: 1px solid currentColor;
   outline-offset: 3px;
 }
 
@@ -534,6 +598,17 @@ html:has(.textbook-dialog[open]) {
   }
 }
 
+@media (max-width: 700px) {
+  .home-nav .nav-identity {
+    display: none;
+  }
+
+  .home-nav .nav-links {
+    flex: 1;
+    justify-content: space-between;
+  }
+}
+
 @media (max-width: 640px) {
   :root {
     --logo-size: 62px;
@@ -552,8 +627,8 @@ html:has(.textbook-dialog[open]) {
     width: 100%;
     min-width: 0;
     min-height: 56px;
-    padding: 0 18px;
-    gap: 0;
+    padding: 0 clamp(12px, 3.75vw, 18px);
+    gap: 12px;
   }
 
   .nav-name {
@@ -561,7 +636,7 @@ html:has(.textbook-dialog[open]) {
   }
 
   .nav-links {
-    width: 100%;
+    flex: 1;
     justify-content: space-between;
     gap: 8px;
   }
@@ -627,6 +702,18 @@ html:has(.textbook-dialog[open]) {
   .uestc-logo {
     width: 56px;
     height: 56px;
+  }
+}
+
+@media (max-width: 460px) {
+  .home-nav .nav-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 8px;
+  }
+
+  .home-nav .nav-links a {
+    padding-block: 4px;
   }
 }
 

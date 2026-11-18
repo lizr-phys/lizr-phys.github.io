@@ -21,7 +21,7 @@
 .post-list {
   margin: 30px 0 0;
   padding: 0;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid var(--divider, #000000);
   list-style: none;
 }
 
@@ -31,7 +31,7 @@
   gap: 28px;
   align-items: start;
   padding: 22px 0;
-  border-top: 1px solid #000000;
+  border-top: 1px solid var(--divider, #000000);
 }
 
 .post-list time {
@@ -55,7 +55,7 @@
 
 .article-content {
   padding-bottom: 44px;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid var(--divider, #000000);
 }
 
 .article-heading h2 {
@@ -78,7 +78,7 @@
 .post-content {
   margin-top: 30px;
   padding-top: 24px;
-  border-top: 1px solid #000000;
+  border-top: 1px solid var(--divider, #000000);
 }
 
 .post-content p {
@@ -98,7 +98,7 @@
   .blog-nav .nav-links {
     width: auto;
     justify-content: flex-end;
-    gap: 24px;
+    gap: clamp(8px, 3vw, 24px);
   }
 
   .post-list > li {
