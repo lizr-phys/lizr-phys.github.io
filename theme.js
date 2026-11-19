@@ -1,26 +1,33 @@
 (() => {
   const root = document.documentElement;
   const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+  const storageKey = "homepage-theme";
+  let selectedTheme = null;
   let toggle;
 
-  function applyTheme(isDark) {
+  function applyTheme() {
+    const isDark = selectedTheme === null ? systemTheme.matches : selectedTheme === "dark";
     root.dataset.theme = isDark ? "dark" : "light";
     if (toggle) {
       toggle.setAttribute("aria-pressed", String(isDark));
     }
   }
 
-  function applySystemTheme() {
-    applyTheme(systemTheme.matches);
+  function restoreTheme() {
+    try {
+      const savedTheme = window.sessionStorage.getItem(storageKey);
+      selectedTheme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : null;
+    } catch {
+      // Keep the in-page choice if storage is unavailable.
+    }
+    applyTheme();
   }
 
-  applySystemTheme();
-  systemTheme.addEventListener("change", applySystemTheme);
+  restoreTheme();
+  systemTheme.addEventListener("change", applyTheme);
 
   window.addEventListener("pageshow", (event) => {
-    if (!event.persisted) return;
-    applySystemTheme();
-    systemTheme.addEventListener("change", applySystemTheme);
+    if (event.persisted) restoreTheme();
   });
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -28,11 +35,16 @@
     if (!toggle) return;
 
     toggle.addEventListener("click", () => {
-      systemTheme.removeEventListener("change", applySystemTheme);
-      applyTheme(root.dataset.theme !== "dark");
+      selectedTheme = root.dataset.theme === "dark" ? "light" : "dark";
+      try {
+        window.sessionStorage.setItem(storageKey, selectedTheme);
+      } catch {
+        // The selection still applies to this page.
+      }
+      applyTheme();
     });
 
-    applySystemTheme();
+    applyTheme();
     toggle.hidden = false;
   });
 })();
