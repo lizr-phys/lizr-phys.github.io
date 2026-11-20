@@ -6,6 +6,7 @@
   const line = document.createElement("span");
   const labelRange = document.createRange();
   let activeLink;
+  let slide;
   let frame = 0;
 
   line.className = "nav-section-line";
@@ -42,8 +43,24 @@
       activeLink = link;
     }
 
+    const previousTransform = line.style.transform;
+    const start = Math.round(label.left);
+    const end = Math.floor(label.right);
     line.style.top = `${Math.round(label.bottom - bounds.top + 2)}px`;
-    line.style.transform = `translateX(${label.left - bounds.left}px) scaleX(${label.width})`;
+    line.style.transform = `translateX(${start - bounds.left}px) scaleX(${end - start})`;
+    if (line.style.transform === previousTransform) return;
+
+    // Only draw the moving line in flight. A settled link uses its native underline.
+    const transition = line.getAnimations().find((animation) => animation.transitionProperty === "transform");
+    slide = transition;
+    nav.classList.toggle("is-sliding", Boolean(transition));
+
+    if (transition) {
+      function settle() {
+        if (slide === transition) nav.classList.remove("is-sliding");
+      }
+      transition.finished.then(settle, settle);
+    }
   }
 
   function scheduleUpdate() {

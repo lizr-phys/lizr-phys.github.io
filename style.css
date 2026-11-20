@@ -58,7 +58,8 @@ a,
 }
 
 a:hover,
-.textbook-dialog button:hover {
+.textbook-dialog button:hover,
+.home-nav .nav-links a[aria-current="location"] {
   text-underline-offset: 5px;
 }
 
@@ -170,7 +171,8 @@ a:focus-visible {
 }
 
 .nav-links a:hover,
-.nav-links a:focus-visible {
+.nav-links a:focus-visible,
+.home-nav .nav-links a[aria-current="location"] {
   text-decoration: underline;
 }
 
@@ -178,7 +180,7 @@ a:focus-visible {
   position: relative;
 }
 
-.home-nav .nav-links a[aria-current="location"] {
+.home-nav .nav-links.is-sliding a[aria-current="location"] {
   text-decoration: none;
 }
 
@@ -189,8 +191,19 @@ a:focus-visible {
   height: 1px;
   background: currentColor;
   pointer-events: none;
+  visibility: hidden;
   transform-origin: left center;
   transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-nav .nav-links.is-sliding .nav-section-line {
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-section-line {
+    transition: none;
+  }
 }
 
 @media (forced-colors: active) {
