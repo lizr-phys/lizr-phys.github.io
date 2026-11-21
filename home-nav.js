@@ -3,10 +3,9 @@
   const nav = document.querySelector(".home-nav .nav-links");
   const links = [...nav.querySelectorAll('a[href^="#"]')];
   const sections = links.map((link) => document.getElementById(link.hash.slice(1)));
+  const hoverLines = links.map((link) => link.querySelector(".nav-link-line"));
   const line = document.createElement("span");
-  const labelRange = document.createRange();
   let activeLink;
-  let slide;
   let frame = 0;
 
   line.className = "nav-section-line";
@@ -33,8 +32,8 @@
     }
 
     const link = links[index];
-    labelRange.selectNodeContents(link);
-    const label = labelRange.getBoundingClientRect();
+    // Use the hover line's geometry for the whole slide, including its final position.
+    const target = hoverLines[index].getBoundingClientRect();
     const bounds = nav.getBoundingClientRect();
 
     if (link !== activeLink) {
@@ -43,26 +42,9 @@
       activeLink = link;
     }
 
-    const previousTransform = line.style.transform;
-    const start = Math.round(label.left);
-    const end = Math.floor(label.right);
-    line.style.top = `${Math.round(label.bottom - bounds.top + 2)}px`;
-    // Match the destination underline from the first frame of the slide.
-    line.style.width = `${end - start}px`;
-    line.style.transform = `translateX(${start - bounds.left}px)`;
-    if (line.style.transform === previousTransform) return;
-
-    // Only draw the moving line in flight. A settled link uses its native underline.
-    const transition = line.getAnimations().find((animation) => animation.transitionProperty === "transform");
-    slide = transition;
-    nav.classList.toggle("is-sliding", Boolean(transition));
-
-    if (transition) {
-      function settle() {
-        if (slide === transition) nav.classList.remove("is-sliding");
-      }
-      transition.finished.then(settle, settle);
-    }
+    line.style.top = `${target.top - bounds.top}px`;
+    line.style.width = `${target.width}px`;
+    line.style.transform = `translateX(${target.left - bounds.left}px)`;
   }
 
   function scheduleUpdate() {
