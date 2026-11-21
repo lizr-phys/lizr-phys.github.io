@@ -47,7 +47,9 @@
     const start = Math.round(label.left);
     const end = Math.floor(label.right);
     line.style.top = `${Math.round(label.bottom - bounds.top + 2)}px`;
-    line.style.transform = `translateX(${start - bounds.left}px) scaleX(${end - start})`;
+    // Match the destination underline from the first frame of the slide.
+    line.style.width = `${end - start}px`;
+    line.style.transform = `translateX(${start - bounds.left}px)`;
     if (line.style.transform === previousTransform) return;
 
     // Only draw the moving line in flight. A settled link uses its native underline.

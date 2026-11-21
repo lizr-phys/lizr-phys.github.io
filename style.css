@@ -187,12 +187,10 @@ a:focus-visible {
 .nav-section-line {
   position: absolute;
   left: 0;
-  width: 1px;
   height: 1px;
   background: currentColor;
   pointer-events: none;
   visibility: hidden;
-  transform-origin: left center;
   transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
